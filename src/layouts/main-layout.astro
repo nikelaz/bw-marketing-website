@@ -1,0 +1,41 @@
+---
+import '@fontsource-variable/inter';
+import stylex from '@stylexjs/stylex';
+import { colors } from '../styles/theme.stylex';
+
+export const styles = stylex.create({
+	body: {
+		width: '100%',
+		height: '100%',
+		margin: 0,
+		backgroundColor: colors.ash200,
+		fontFamily: "'Inter Variable', sans-serif",
+		fontSize: '24px',
+	},
+	content: {
+		overflow: 'hidden',
+	},
+});
+---
+
+<!doctype html>
+<html lang="en" {...stylex.attrs(styles.body)}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Budget Warden</title>
+	</head>
+	<body {...stylex.attrs(styles.body)}>
+		<div {...stylex.attrs(styles.content)}>
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	*, *:before, *:after {
+		box-sizing: border-box;
+	}
+</style>

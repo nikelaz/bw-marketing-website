@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342" height="168" viewBox="0 0 342 168" fill="none">
+  <mask id="path-1-inside-1_206_9" fill="white">
+    <path d="M0 0.555603H342V27.5556H0V0.555603Z" />
+  </mask>
+  <path d="M342 26.5556H0V28.5556H342V26.5556Z" fill="#2C1F51" fill-opacity="0.3" mask="url(#path-1-inside-1_206_9)" />
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="15" font-weight="bold"
+    letter-spacing="0em">
+    <tspan x="10" y="13.5101">Expenses</tspan>
+  </text>
+  <text fill="#6E6193" xml:space="preserve" style="white-space: pre" font-size="15" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="201" y="13.5101">Planned</tspan>
+  </text>
+  <text fill="#6E6193" xml:space="preserve" style="white-space: pre" font-size="15" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="300" y="13.5101">Paid</tspan>
+  </text>
+  <mask id="path-6-inside-2_206_9" fill="white">
+    <path d="M0 27.5556H342V65.5556H0V27.5556Z" />
+  </mask>
+  <path d="M342 64.5556H0V66.5556H342V64.5556Z" fill="#2C1F51" fill-opacity="0.3" mask="url(#path-6-inside-2_206_9)" />
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="10" y="51.6465">Food</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="222" y="51.6465">640$</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="295" y="51.6465">450$</tspan>
+  </text>
+  <line y1="65.0549" x2="240" y2="65.0549" stroke="#7D1641" />
+  <mask id="path-12-inside-3_206_9" fill="white">
+    <path d="M0 65.5556H342V103.556H0V65.5556Z" />
+  </mask>
+  <path d="M342 102.556H0V104.556H342V102.556Z" fill="#2C1F51" fill-opacity="0.3" mask="url(#path-12-inside-3_206_9)" />
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="10" y="89.6465">Utilities</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="223" y="89.6465">220$</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="295" y="89.6465">240$</tspan>
+  </text>
+  <line y1="103.055" x2="315" y2="103.055" stroke="#7D1641" />
+  <mask id="path-18-inside-4_206_9" fill="white">
+    <path d="M0 103.556H342V141.556H0V103.556Z" />
+  </mask>
+  <path d="M342 140.556H0V142.556H342V140.556Z" fill="#2C1F51" fill-opacity="0.3" mask="url(#path-18-inside-4_206_9)" />
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="10" y="127.647">Housing</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="215" y="127.647">1500$</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="300" y="127.647">110$</tspan>
+  </text>
+  <line y1="141.055" x2="24" y2="141.055" stroke="#7D1641" />
+  <text fill="#03318B" xml:space="preserve" style="white-space: pre" font-size="13" font-weight="bold"
+    letter-spacing="0em">
+    <tspan x="10" y="165.283">+ New Category</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="213" y="165.647">2360$</tspan>
+  </text>
+  <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="14" font-weight="600"
+    letter-spacing="0em">
+    <tspan x="295" y="165.647">800$</tspan>
+  </text>
+</svg>

@@ -1,0 +1,169 @@
+---
+import stylex from '@stylexjs/stylex';
+import HeaderFooterLayout from '../layouts/header-footer-layout.astro';
+import { Container, Row, Col } from '../components/grid';
+import Heading from '../components/heading';
+import Section from '../components/section';
+import Stack from '../components/stack';
+import { Card, CardHeader, CardFooter } from '../components/card';
+import Aspect from '../components/aspect';
+import Paragraph from '../components/paragraph';
+import { Tag, TagLabel, TagIcon } from '../components/tag';
+import Anchor from '../components/anchor';
+
+import blogThumbnail from '../assets/blogs/blog-thumbnail.svg';
+import CalendarIcon from '../assets/icons/calendar.svg';
+import UserIcon from '../assets/icons/user.svg';
+
+export const styles = stylex.create({
+	thumbnail: {
+		maxWidth: '100%',
+		maxHeight: '100%',
+	},
+});
+---
+
+<HeaderFooterLayout>
+	<Section>
+		<Container>
+			<Stack gap="lg">
+				<Heading level="h1" size={40}>Blog</Heading>
+				
+				<Row largeGutter={true}>
+					<Col span={6} break="md" largeGutter={true}>
+						<Card>
+							<CardHeader>
+								<Aspect>
+									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
+								</Aspect>
+							</CardHeader>
+							<Stack gap="md">
+								<Stack gap="sm">
+									<Heading level="h2" size={30}>
+										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
+									</Heading>
+									<Paragraph fontSize={26}>
+										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
+									</Paragraph>
+								</Stack>
+								<CardFooter>
+									<Tag>
+										<TagIcon>
+											<UserIcon />
+										</TagIcon>
+										<TagLabel>Dora Naydenova</TagLabel>
+									</Tag>
+									<Tag>
+										<TagIcon>
+											<CalendarIcon />
+										</TagIcon>
+										<TagLabel>22 Sep 2024</TagLabel>
+									</Tag>
+								</CardFooter>
+							</Stack>
+						</Card>
+					</Col>
+					<Col span={6} break="md" largeGutter={true}>
+						<Card>
+							<CardHeader>
+								<Aspect>
+									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
+								</Aspect>
+							</CardHeader>
+							<Stack gap="md">
+								<Stack gap="sm">
+									<Heading level="h2" size={30}>
+										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
+									</Heading>
+									<Paragraph fontSize={26}>
+										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
+									</Paragraph>
+								</Stack>
+								<CardFooter>
+									<Tag>
+										<TagIcon>
+											<UserIcon />
+										</TagIcon>
+										<TagLabel>Dora Naydenova</TagLabel>
+									</Tag>
+									<Tag>
+										<TagIcon>
+											<CalendarIcon />
+										</TagIcon>
+										<TagLabel>22 Sep 2024</TagLabel>
+									</Tag>
+								</CardFooter>
+							</Stack>
+						</Card>
+					</Col>
+					<Col span={6} break="md" largeGutter={true}>
+						<Card>
+							<CardHeader>
+								<Aspect>
+									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
+								</Aspect>
+							</CardHeader>
+							<Stack gap="md">
+								<Stack gap="sm">
+									<Heading level="h2" size={30}>
+										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
+									</Heading>
+									<Paragraph fontSize={26}>
+										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
+									</Paragraph>
+								</Stack>
+								<CardFooter>
+									<Tag>
+										<TagIcon>
+											<UserIcon />
+										</TagIcon>
+										<TagLabel>Dora Naydenova</TagLabel>
+									</Tag>
+									<Tag>
+										<TagIcon>
+											<CalendarIcon />
+										</TagIcon>
+										<TagLabel>22 Sep 2024</TagLabel>
+									</Tag>
+								</CardFooter>
+							</Stack>
+						</Card>
+					</Col>
+					<Col span={6} break="md" largeGutter={true}>
+						<Card>
+							<CardHeader>
+								<Aspect>
+									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
+								</Aspect>
+							</CardHeader>
+							<Stack gap="md">
+								<Stack gap="sm">
+									<Heading level="h2" size={30}>
+										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
+									</Heading>
+									<Paragraph fontSize={26}>
+										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
+									</Paragraph>
+								</Stack>
+								<CardFooter>
+									<Tag>
+										<TagIcon>
+											<UserIcon />
+										</TagIcon>
+										<TagLabel>Dora Naydenova</TagLabel>
+									</Tag>
+									<Tag>
+										<TagIcon>
+											<CalendarIcon />
+										</TagIcon>
+										<TagLabel>22 Sep 2024</TagLabel>
+									</Tag>
+								</CardFooter>
+							</Stack>
+						</Card>
+					</Col>
+				</Row>
+			</Stack>
+		</Container>
+	</Section>
+</HeaderFooterLayout>

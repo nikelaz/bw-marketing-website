@@ -1,0 +1,14 @@
+---
+import MainLayout from './main-layout.astro';
+import { Container } from '../components/grid';
+import Footer from '../components/footer';
+import Prefooter from '../components/prefooter';
+---
+
+<MainLayout>
+	<slot />
+	<Container>
+		<Prefooter />
+		<Footer />
+	</Container>
+</MainLayout>

@@ -1,11 +1,207 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import stylex from '@stylexjs/stylex';
+import FooterLayout from '../layouts/footer-layout.astro';
+import { Container } from '../components/grid';
+import Header from '../components/header';
+import { Row, Col } from '../components/grid';
+import Heading from '../components/heading';
+import Stack from '../components/stack';
+import Paragraph from '../components/paragraph';
+import Button from '../components/button';
+import Section from '../components/section';
+import { Card, CardHeader } from '../components/card';
+import Aspect from '../components/aspect';
+import OrganizeYourFinancesIllustration from '../assets/organize-your-finances.svg';
+import VisualizeYourProgressIllustration from '../assets/visualize-your-progress.svg';
+import CreateMonthlyBudgetsIllustration from '../assets/create-monthly-budgets.svg';
+import GooglePlayBtn from '../assets/google-play-btn.svg';
+import AppStoreBtn from '../assets/app-store-btn.svg';
+import HeroIllustration from '../assets/hero-illustration.svg';
+import HeroBackground from '../assets/hero-background.svg';
+import PiggyBankIllustration from '../assets/piggy-bank.svg';
+import EnvelopeIllustration from '../assets/envelope.svg';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export const lg: LgMaxMediaQuery = '@media (max-width: 1024px)';
+
+export const styles = stylex.create({
+	hero: {
+		position: 'relative',
+		overflow: 'hidden',
+	},
+	heroBgShape: {
+		position: 'absolute',
+		top: {
+			default: null,
+			[lg]: 0,
+		},
+		bottom: {
+			default: 0,
+			[lg]: 'auto',
+		},
+		left: '50%',
+		transform: 'translateX(-50%)',
+	},
+	heroContent: {
+		position: 'relative',
+	},
+	heroMainCol: {
+		paddingTop: '1.666rem',
+	},
+	heroIllustrationContainer: {
+		position: 'relative',
+		minHeight: '18.708rem',
+		display: {
+			default: null,
+			[lg]: 'none',
+		}
+	},
+	heroIllustration: {
+		position: 'absolute',
+		top: 0,
+		bottom: 0,
+	},
+	illustration: {
+		maxWidth: '100%',
+		maxHeight: '100%',
+	}
+});
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<FooterLayout>
+	<section {...stylex.attrs(styles.hero)}>
+		<HeroBackground {...stylex.attrs(styles.heroBgShape)} />
+		<div {...stylex.attrs(styles.heroContent)}>
+			<Container>
+				<Header client:idle />
+				<Row>
+					<Col span={8} break="lg">
+						<div {...stylex.attrs(styles.heroMainCol)}>
+							<Stack gap="md">
+								<Stack gap="sm">
+									<Heading level="h1" size={40}>Take Control of Your Personal Finances</Heading>
+									<Heading level="h2" size={32} fontWeight='regular'>Your Personal Finance Copilot</Heading>
+								</Stack>
+								<Row>
+									<Col span={11}>
+										<Paragraph>Are you tired of fragile spreadsheets and complicated apps? Budget Warden is an intuitive and powerful tool designed to help you manage your personal finances hassle-free.</Paragraph>
+									</Col>
+								</Row>
+								<Row>
+									<Col layout="fit">
+										<Button href="#">Sign Up</Button>
+									</Col>
+									<Col layout="fit">
+										<a href="#" aria-label="download on the app store">
+											<AppStoreBtn width="7.542rem" height="2.542rem" />
+										</a>
+									</Col>
+									<Col layout="fit">
+										<a href="#" aria-label="get it on google play">
+											<GooglePlayBtn width="8.583rem" height="2.542rem" />
+										</a>
+									</Col>
+								</Row>
+							</Stack>
+						</div>
+					</Col>
+					<Col>
+						<div {...stylex.attrs(styles.heroIllustrationContainer)}>
+							<HeroIllustration {...stylex.attrs(styles.heroIllustration)} />
+						</div>
+					</Col>
+				</Row>
+			</Container>
+		</div>
+	</section>
+	<Container>
+		<Section>
+			<Stack gap="lg">
+				<Heading level="h2" size={40}>With Budget Warden You Will</Heading>
+				<Row>
+					<Col span={4} break="md" halfBreak="lg">
+						<Card>
+							<Stack gap="md">
+								<CardHeader>
+									<div style="height: 180px;"> 
+										<CreateMonthlyBudgetsIllustration {...stylex.attrs(styles.illustration)} />
+									</div>
+								</CardHeader>
+								<Stack gap="sm">
+									<Heading level="h3" size={30}>Create monthly budgets</Heading>
+									<Paragraph size={26}>and enjoy the simplicity of a fixed monthly budgeting cycle.</Paragraph>
+								</Stack>
+							</Stack>
+						</Card>
+					</Col>
+					<Col span={4} break="md" halfBreak="lg">
+						<Card>
+							<Stack gap="md">
+								<CardHeader>
+									<OrganizeYourFinancesIllustration height="180" {...stylex.attrs(styles.illustration)} />
+								</CardHeader>
+								<Stack gap="sm">
+									<Heading level="h3" size={30}>Organize your finances</Heading>
+									<Paragraph size={26}>with customizable categories that fit your lifestyle.</Paragraph>
+								</Stack>
+							</Stack>
+						</Card>
+					</Col>
+					<Col span={4} break="md" halfBreak="lg">
+						<Card>
+							<Stack gap="md">
+								<CardHeader>
+									<VisualizeYourProgressIllustration height="180" {...stylex.attrs(styles.illustration)} />
+								</CardHeader>
+								<Stack gap="sm">
+									<Heading level="h3" size={30}>Visualize your progress</Heading>
+									<Paragraph size={26}>with scales and charts to understand your finances.</Paragraph>
+								</Stack>
+							</Stack>
+						</Card>
+					</Col>
+				</Row>
+			</Stack>
+		</Section>
+		<Section>
+			<Stack gap="lg">
+				<Row>
+					<Col span={8} break="lg">
+						<Stack gap="sm">
+							<Heading level="h2" size={40}>Methodologies</Heading>
+							<Paragraph size={28}>We have meticulously researched and analyzed various personal budgeting approaches to develop an app grounded in proven, <br>effective methods.</Paragraph>
+						</Stack>
+					</Col>
+				</Row>
+
+				<Row>
+					<Col span={6} break="md">
+						<Stack gap="md">
+							<PiggyBankIllustration />
+							<Stack gap="sm">
+								<Heading level="h3" size={30}>
+									Zero-Sum Budgeting
+								</Heading>
+								<Paragraph size={24}>
+									Zero-sum budgeting is a financial method where every dollar of your income is assigned a specific purpose. It's like creating a detailed plan for how to spend every penny.
+								</Paragraph>
+							</Stack>
+						</Stack>
+					</Col>
+					<Col span={6} break="md">
+						<Stack gap="md">
+							<EnvelopeIllustration />
+							<Stack gap="sm">
+								<Heading level="h3" size={30}>
+									Envelope Budgeting
+								</Heading>
+								<Paragraph size={24}>
+									Envelope budgeting involves assigning specific cash amount s to different spending categories. Once an envelope is empty, spending in that category stops until the next budgeting period.
+								</Paragraph>
+							</Stack>
+						</Stack>
+					</Col>
+				</Row>
+			</Stack>
+		</Section>
+	</Container>
+</FooterLayout>

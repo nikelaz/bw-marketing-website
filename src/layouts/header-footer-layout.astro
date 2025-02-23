@@ -1,0 +1,12 @@
+---
+import FooterLayout from './footer-layout.astro';
+import { Container } from '../components/grid';
+import Header from '../components/header';
+---
+
+<FooterLayout>
+	<Container>
+		<Header client:idle />
+	</Container>
+	<slot />
+</FooterLayout>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="288" height="202" viewBox="0 0 288 202" fill="none">
+  <g clip-path="url(#clip0_101_33)">
+    <path
+      d="M26.5497 2.3499C26.5497 1.78061 26.0682 1.32261 25.4696 1.32261C24.8711 1.32261 24.3895 1.78061 24.3895 2.3499V4.06204H22.5893C21.0006 4.06204 19.709 5.29051 19.709 6.80148V7.48634V9.54092V20.4987C19.709 22.0096 21.0006 23.2381 22.5893 23.2381H36.9909C38.5796 23.2381 39.8712 22.0096 39.8712 20.4987V9.54092V7.48634V6.80148C39.8712 5.29051 38.5796 4.06204 36.9909 4.06204H35.1907V2.3499C35.1907 1.78061 34.7092 1.32261 34.1106 1.32261C33.512 1.32261 33.0305 1.78061 33.0305 2.3499V4.06204H26.5497V2.3499ZM21.8692 9.54092H37.711V20.4987C37.711 20.8753 37.387 21.1835 36.9909 21.1835H22.5893C22.1933 21.1835 21.8692 20.8753 21.8692 20.4987V9.54092Z"
+      fill="#3F3264" />
+  </g>
+  <text fill="#03318B" xml:space="preserve" style="white-space: pre" font-size="19.467" font-weight="bold"
+    letter-spacing="0em">
+    <tspan x="58.4111" y="19.3593">August 2024</tspan>
+  </text>
+  <path
+    d="M207.234 15.6887C207.516 15.9716 207.976 15.9716 208.259 15.6887L212.604 11.3434C212.887 11.0605 212.887 10.6011 212.604 10.3182C212.321 10.0353 211.862 10.0353 211.579 10.3182L207.745 14.152L203.911 10.3204C203.628 10.0375 203.169 10.0375 202.886 10.3204C202.603 10.6033 202.603 11.0628 202.886 11.3457L207.231 15.691L207.234 15.6887Z"
+    fill="#03318B" />
+  <g filter="url(#filter0_d_101_33)">
+    <rect x="19.709" y="44.2803" width="246.582" height="135.551" rx="9.27" fill="white" />
+    <mask id="path-5-inside-1_101_33" fill="white">
+      <path d="M33.614 61.6616H252.386V91.8586H33.614V61.6616Z" />
+    </mask>
+    <path d="M252.386 90.9316H33.614V92.7856H252.386V90.9316Z" fill="#E6E5EA" mask="url(#path-5-inside-1_101_33)" />
+    <text fill="#03318B" xml:space="preserve" style="white-space: pre" font-size="16.686" font-weight="600"
+      letter-spacing="0em">
+      <tspan x="33.614" y="77.7292">July 2024</tspan>
+    </text>
+    <mask id="path-8-inside-2_101_33" fill="white">
+      <path d="M33.614 91.8586H252.386V132.253H33.614V91.8586Z" />
+    </mask>
+    <path d="M252.386 131.326H33.614V133.18H252.386V131.326Z" fill="#E6E5EA" mask="url(#path-8-inside-2_101_33)" />
+    <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="16.686" font-weight="600"
+      letter-spacing="0em">
+      <tspan x="33.614" y="118.123">August 2024</tspan>
+    </text>
+    <text fill="#03318B" xml:space="preserve" style="white-space: pre" font-size="16.686" font-weight="600"
+      letter-spacing="0em">
+      <tspan x="33.614" y="158.517">+ Create New Budget</tspan>
+    </text>
+  </g>
+  <defs>
+    <filter id="filter0_d_101_33" x="0.708984" y="26.2803" width="286.582" height="175.551" filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha" />
+      <feOffset dx="1" dy="2" />
+      <feGaussianBlur stdDeviation="10" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_101_33" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_101_33" result="shape" />
+    </filter>
+    <clipPath id="clip0_101_33">
+      <rect width="20.1623" height="21.9155" fill="white" transform="translate(19.709 1.32261)" />
+    </clipPath>
+  </defs>
+</svg>
