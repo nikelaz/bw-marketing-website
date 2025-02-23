@@ -1,10 +1,15 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "src/assets/uploads" # Location where files will be stored in the repo
+public_folder: "src/assets/uploads" # The src attribute for uploaded media
+
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    media_folder: "src/assets/uploads" # Location where files will be stored in the repo
-    public_folder: "src/assets/uploads" # The src attribute for uploaded media
     fields: # The fields for each document, usually in frontmatter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
