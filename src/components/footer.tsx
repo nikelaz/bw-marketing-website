@@ -38,7 +38,7 @@ const Footer = () => (
   <footer {...stylex.props(styles.footer)}>
     <p {...stylex.props(styles.copy)}>© Budget Warden {currentYear}</p>
     <FooterNav>
-      <FooterNavLink href="#">Blog</FooterNavLink>
+      <FooterNavLink href="/blog">Blog</FooterNavLink>
       <FooterNavLink href="#">Support</FooterNavLink>
       <FooterNavLink href="#">Legal</FooterNavLink>
     </FooterNav>
@@ -46,7 +46,7 @@ const Footer = () => (
 );
 
 const FooterNav = (props: GenericChildrenProps) => (
-  <nav {...stylex.props(styles.nav)}>
+  <nav {...stylex.props(styles.nav)} aria-label="footer navigation">
     {props.children}
   </nav>
 );

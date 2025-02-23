@@ -41,10 +41,10 @@ const Prefooter = () => (
               <Heading level="h2" size={40}>Get Started for Free!</Heading>
               <Paragaph fontSize={26}>Take control of your personal finances.</Paragaph>
             </Stack>
-            <Button href="#" fontSize={20}>Sign Up</Button>
+            <Button href="https://app.budgetwarden.com/sign-up" fontSize={20}>Sign Up</Button>
           </Stack>
         </Col>
-        <img src={imgPrefooterIllustration.src} loading="lazy" alt="" {...stylex.props(styles.illustration)} />
+        <img src={imgPrefooterIllustration.src} loading="lazy" alt="a male and female character shown as saving large coins in a cartoon piggy bank to demonstrate a couple saving money together" {...stylex.props(styles.illustration)} />
       </Row>
     </div>
   </Section>

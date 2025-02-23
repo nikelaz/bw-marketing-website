@@ -2,9 +2,10 @@
 import FooterLayout from './footer-layout.astro';
 import { Container } from '../components/grid';
 import Header from '../components/header';
+const { title, description } = Astro.props;
 ---
 
-<FooterLayout>
+<FooterLayout title={title} description={description}>
 	<Container>
 		<Header client:idle />
 	</Container>

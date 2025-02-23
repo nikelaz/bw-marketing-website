@@ -69,7 +69,7 @@ export const styles = stylex.create({
 
 <FooterLayout>
 	<section {...stylex.attrs(styles.hero)}>
-		<HeroBackground {...stylex.attrs(styles.heroBgShape)} />
+		<HeroBackground {...stylex.attrs(styles.heroBgShape)} role="presentation" />
 		<div {...stylex.attrs(styles.heroContent)}>
 			<Container>
 				<Header client:idle />
@@ -88,25 +88,27 @@ export const styles = stylex.create({
 								</Row>
 								<Row>
 									<Col layout="fit">
-										<Button href="#">Sign Up</Button>
+										<Button href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
 									</Col>
 									<Col layout="fit">
-										<a href="#" aria-label="download on the app store">
-											<AppStoreBtn width="7.542rem" height="2.542rem" />
+										<a href="https://apps.apple.com/us/app/budget-warden/id6741514133">
+											<AppStoreBtn width="7.542rem" height="2.542rem" aria-label="download on the app store" />
 										</a>
 									</Col>
+									<!--
 									<Col layout="fit">
-										<a href="#" aria-label="get it on google play">
-											<GooglePlayBtn width="8.583rem" height="2.542rem" />
+										<a href="#">
+											<GooglePlayBtn width="8.583rem" height="2.542rem" aria-label="get it on google play" />
 										</a>
 									</Col>
+									-->
 								</Row>
 							</Stack>
 						</div>
 					</Col>
 					<Col>
 						<div {...stylex.attrs(styles.heroIllustrationContainer)}>
-							<HeroIllustration {...stylex.attrs(styles.heroIllustration)} />
+							<HeroIllustration {...stylex.attrs(styles.heroIllustration)} aria-label="illustration of an individual male analyzing his budget on paper with charts, calculators and a calendar in the background" />
 						</div>
 					</Col>
 				</Row>
@@ -123,7 +125,7 @@ export const styles = stylex.create({
 							<Stack gap="md">
 								<CardHeader>
 									<div style="height: 180px;"> 
-										<CreateMonthlyBudgetsIllustration {...stylex.attrs(styles.illustration)} />
+										<CreateMonthlyBudgetsIllustration {...stylex.attrs(styles.illustration)} aria-label="screenshot from the app demonstrating the monthly budget selector (dropdown)" />
 									</div>
 								</CardHeader>
 								<Stack gap="sm">
@@ -137,7 +139,7 @@ export const styles = stylex.create({
 						<Card>
 							<Stack gap="md">
 								<CardHeader>
-									<OrganizeYourFinancesIllustration height="180" {...stylex.attrs(styles.illustration)} />
+									<OrganizeYourFinancesIllustration height="180" {...stylex.attrs(styles.illustration)} aria-label="screenshot from the app demonstrating the option to create custom budget categories like food, utilities and housing in the expenses category" />
 								</CardHeader>
 								<Stack gap="sm">
 									<Heading level="h3" size={30}>Organize your finances</Heading>
@@ -150,7 +152,7 @@ export const styles = stylex.create({
 						<Card>
 							<Stack gap="md">
 								<CardHeader>
-									<VisualizeYourProgressIllustration height="180" {...stylex.attrs(styles.illustration)} />
+									<VisualizeYourProgressIllustration height="180" {...stylex.attrs(styles.illustration)} aria-label="screenshot from the app showing the data visualization and the scales component that displays the balance between the planned income and the left to budget amount" />
 								</CardHeader>
 								<Stack gap="sm">
 									<Heading level="h3" size={30}>Visualize your progress</Heading>
@@ -176,7 +178,7 @@ export const styles = stylex.create({
 				<Row>
 					<Col span={6} break="md">
 						<Stack gap="md">
-							<PiggyBankIllustration />
+							<PiggyBankIllustration aria-label="illustration of a piggy bank with a coin" />
 							<Stack gap="sm">
 								<Heading level="h3" size={30}>
 									Zero-Sum Budgeting
@@ -189,7 +191,7 @@ export const styles = stylex.create({
 					</Col>
 					<Col span={6} break="md">
 						<Stack gap="md">
-							<EnvelopeIllustration />
+							<EnvelopeIllustration aria-label="illustration of a envelope with a dollar bill inside of it" />
 							<Stack gap="sm">
 								<Heading level="h3" size={30}>
 									Envelope Budgeting

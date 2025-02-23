@@ -1,4 +1,5 @@
 ---
+import { getCollection, getEntry } from 'astro:content';
 import stylex from '@stylexjs/stylex';
 import HeaderFooterLayout from '../layouts/header-footer-layout.astro';
 import { Container, Row, Col } from '../components/grid';
@@ -10,6 +11,7 @@ import Aspect from '../components/aspect';
 import Paragraph from '../components/paragraph';
 import { Tag, TagLabel, TagIcon } from '../components/tag';
 import Anchor from '../components/anchor';
+import getFormattedDate from '../helpers/get-formatted-date';
 
 import blogThumbnail from '../assets/blogs/blog-thumbnail.svg';
 import CalendarIcon from '../assets/icons/calendar.svg';
@@ -21,147 +23,55 @@ export const styles = stylex.create({
 		maxHeight: '100%',
 	},
 });
+
+const posts = await getCollection('blog');
 ---
 
-<HeaderFooterLayout>
+<HeaderFooterLayout
+	title="Blog - Budget Warden"
+	description="Explore the Budget Warden blog for expert tips, personal finance advice, and practical budgeting strategies. Stay informed with the latest articles to help you manage your money and take control of your financial future."
+>
 	<Section>
 		<Container>
 			<Stack gap="lg">
 				<Heading level="h1" size={40}>Blog</Heading>
 				
 				<Row largeGutter={true}>
-					<Col span={6} break="md" largeGutter={true}>
-						<Card>
-							<CardHeader>
-								<Aspect>
-									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
-								</Aspect>
-							</CardHeader>
-							<Stack gap="md">
-								<Stack gap="sm">
-									<Heading level="h2" size={30}>
-										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
-									</Heading>
-									<Paragraph fontSize={26}>
-										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
-									</Paragraph>
+					{posts.map((post) => (
+						<Col span={6} break="md" largeGutter={true}>
+							<Card>
+								<CardHeader>
+									<Aspect>
+										<img {...stylex.attrs(styles.thumbnail)} src={post.data.thumbnail.src} alt="" role="presentation" />
+									</Aspect>
+								</CardHeader>
+								<Stack gap="md">
+									<Stack gap="sm">
+										<Heading level="h2" size={30}>
+											<Anchor href={`/blog/${post.id}`} textDecoration="none">{post.data.title}</Anchor>
+										</Heading>
+										<Paragraph fontSize={26}>
+											{post.data.summary}
+										</Paragraph>
+									</Stack>
+									<CardFooter>
+										<Tag>
+											<TagIcon>
+												<UserIcon aria-label="user icon" />
+											</TagIcon>
+											<TagLabel>{post.data.author}</TagLabel>
+										</Tag>
+										<Tag>
+											<TagIcon>
+												<CalendarIcon aria-label="date icon" />
+											</TagIcon>
+											<TagLabel>{getFormattedDate(post.data.date)}</TagLabel>
+										</Tag>
+									</CardFooter>
 								</Stack>
-								<CardFooter>
-									<Tag>
-										<TagIcon>
-											<UserIcon />
-										</TagIcon>
-										<TagLabel>Dora Naydenova</TagLabel>
-									</Tag>
-									<Tag>
-										<TagIcon>
-											<CalendarIcon />
-										</TagIcon>
-										<TagLabel>22 Sep 2024</TagLabel>
-									</Tag>
-								</CardFooter>
-							</Stack>
-						</Card>
-					</Col>
-					<Col span={6} break="md" largeGutter={true}>
-						<Card>
-							<CardHeader>
-								<Aspect>
-									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
-								</Aspect>
-							</CardHeader>
-							<Stack gap="md">
-								<Stack gap="sm">
-									<Heading level="h2" size={30}>
-										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
-									</Heading>
-									<Paragraph fontSize={26}>
-										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
-									</Paragraph>
-								</Stack>
-								<CardFooter>
-									<Tag>
-										<TagIcon>
-											<UserIcon />
-										</TagIcon>
-										<TagLabel>Dora Naydenova</TagLabel>
-									</Tag>
-									<Tag>
-										<TagIcon>
-											<CalendarIcon />
-										</TagIcon>
-										<TagLabel>22 Sep 2024</TagLabel>
-									</Tag>
-								</CardFooter>
-							</Stack>
-						</Card>
-					</Col>
-					<Col span={6} break="md" largeGutter={true}>
-						<Card>
-							<CardHeader>
-								<Aspect>
-									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
-								</Aspect>
-							</CardHeader>
-							<Stack gap="md">
-								<Stack gap="sm">
-									<Heading level="h2" size={30}>
-										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
-									</Heading>
-									<Paragraph fontSize={26}>
-										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
-									</Paragraph>
-								</Stack>
-								<CardFooter>
-									<Tag>
-										<TagIcon>
-											<UserIcon />
-										</TagIcon>
-										<TagLabel>Dora Naydenova</TagLabel>
-									</Tag>
-									<Tag>
-										<TagIcon>
-											<CalendarIcon />
-										</TagIcon>
-										<TagLabel>22 Sep 2024</TagLabel>
-									</Tag>
-								</CardFooter>
-							</Stack>
-						</Card>
-					</Col>
-					<Col span={6} break="md" largeGutter={true}>
-						<Card>
-							<CardHeader>
-								<Aspect>
-									<img {...stylex.attrs(styles.thumbnail)} src={blogThumbnail.src} alt="Blog thumbnail" />
-								</Aspect>
-							</CardHeader>
-							<Stack gap="md">
-								<Stack gap="sm">
-									<Heading level="h2" size={30}>
-										<Anchor href="#" textDecoration="none">Debt-Free Living: The Power of Budgeting and Saving</Anchor>
-									</Heading>
-									<Paragraph fontSize={26}>
-										Debt can feel like a weight that’s hard to lift, but embracing a debt-free lifestyle is not only achievable but also liberating.
-									</Paragraph>
-								</Stack>
-								<CardFooter>
-									<Tag>
-										<TagIcon>
-											<UserIcon />
-										</TagIcon>
-										<TagLabel>Dora Naydenova</TagLabel>
-									</Tag>
-									<Tag>
-										<TagIcon>
-											<CalendarIcon />
-										</TagIcon>
-										<TagLabel>22 Sep 2024</TagLabel>
-									</Tag>
-								</CardFooter>
-							</Stack>
-						</Card>
-					</Col>
+							</Card>
+						</Col>
+					))}
 				</Row>
 			</Stack>
 		</Container>
