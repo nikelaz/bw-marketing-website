@@ -65,6 +65,11 @@ export const styles = stylex.create({
 	illustration: {
 		maxWidth: '100%',
 		maxHeight: '100%',
+	},
+	storeBtn: {
+		display: 'block',
+		width: 'auto',
+		height: '100%'
 	}
 });
 ---
@@ -94,13 +99,13 @@ export const styles = stylex.create({
 									</Col>
 									<Col layout="fit">
 										<a href="https://apps.apple.com/us/app/budget-warden/id6741514133" target="_blank" rel="noopener">
-											<AppStoreBtn width="7.542rem" height="2.542rem" aria-label="download on the app store" />
+											<AppStoreBtn {...stylex.attrs(styles.storeBtn)} aria-label="download on the app store" />
 										</a>
 									</Col>
 									<!--
 									<Col layout="fit">
 										<a href="#">
-											<GooglePlayBtn width="8.583rem" height="2.542rem" aria-label="get it on google play" />
+											<GooglePlayBtn {...stylex.attrs(styles.storeBtn)} aria-label="get it on google play" />
 										</a>
 									</Col>
 									-->
