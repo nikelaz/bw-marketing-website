@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-media_folder: "/src/assets/uploads" # Location where files will be stored in the repo
-public_folder: "/src/assets/uploads" # The src attribute for uploaded media
+media_folder: "/public/uploads" # Location where files will be stored in the repo
+public_folder: "/uploads" # The src attribute for uploaded media
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
