@@ -7,7 +7,11 @@ import Button from './button';
 const xl: XlMaxMediaQuery = '@media (max-width: 1280px)';
 const sm: SmMaxMediaQuery = '@media (max-width: 640px)';
 
-const Header = () => {
+interface HeaderProps {
+  currentPath: string;
+}
+
+const Header = (props: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -27,11 +31,11 @@ const Header = () => {
               <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
             </svg>
           </button>
-          <HeaderNavLink href="/" isActive={true}>Overview</HeaderNavLink>
-          <HeaderNavLink href="/blog">Blog</HeaderNavLink>
-          <HeaderNavLink href="#">Support</HeaderNavLink>
-          <HeaderNavLink href="#">Legal</HeaderNavLink>
-          <HeaderNavLink href="https://app.budgetwarden.com/login">Sign In</HeaderNavLink>
+          <HeaderNavLink href="/" currentPath={props.currentPath}>Overview</HeaderNavLink>
+          <HeaderNavLink href="/blog" currentPath={props.currentPath}>Blog</HeaderNavLink>
+          {/* <HeaderNavLink href="#" currentPath={props.currentPath}>Support</HeaderNavLink> */}
+          <HeaderNavLink href="/legal" currentPath={props.currentPath}>Legal</HeaderNavLink>
+          <HeaderNavLink href="https://app.budgetwarden.com/login" currentPath={props.currentPath}>Sign In</HeaderNavLink>
           <Button size="sm" fontSize={20} href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
         </HeaderNavDrawer>
         <button
@@ -69,11 +73,11 @@ const HeaderNavDrawer = (props: HeaderNavDrawerProps) => (
 interface HeaderNavLinkProps {
   children: React.ReactNode;
   href: string;
-  isActive?: boolean;
+  currentPath: string;
 }
 
 const HeaderNavLink = (props: HeaderNavLinkProps) => (
-  <a href={props.href} {...stylex.props(styles.link, props.isActive && styles.linkActive)}>
+  <a href={props.href} {...stylex.props(styles.link, props.currentPath === props.href && styles.linkActive)} data-astro-prefetch>
     {props.children}
   </a>
 );

@@ -21,6 +21,8 @@ import HeroBackground from '../assets/hero-background.svg';
 import PiggyBankIllustration from '../assets/piggy-bank.svg';
 import EnvelopeIllustration from '../assets/envelope.svg';
 
+const currentPath = new URL(Astro.request.url).pathname;
+
 export const lg: LgMaxMediaQuery = '@media (max-width: 1024px)';
 
 export const styles = stylex.create({
@@ -72,7 +74,7 @@ export const styles = stylex.create({
 		<HeroBackground {...stylex.attrs(styles.heroBgShape)} role="presentation" />
 		<div {...stylex.attrs(styles.heroContent)}>
 			<Container>
-				<Header client:idle />
+				<Header client:idle currentPath={currentPath} />
 				<Row>
 					<Col span={8} break="lg">
 						<div {...stylex.attrs(styles.heroMainCol)}>
@@ -91,7 +93,7 @@ export const styles = stylex.create({
 										<Button href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
 									</Col>
 									<Col layout="fit">
-										<a href="https://apps.apple.com/us/app/budget-warden/id6741514133">
+										<a href="https://apps.apple.com/us/app/budget-warden/id6741514133" target="_blank" rel="noopener">
 											<AppStoreBtn width="7.542rem" height="2.542rem" aria-label="download on the app store" />
 										</a>
 									</Col>

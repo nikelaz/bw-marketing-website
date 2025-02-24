@@ -39,8 +39,8 @@ const Footer = () => (
     <p {...stylex.props(styles.copy)}>© Budget Warden {currentYear}</p>
     <FooterNav>
       <FooterNavLink href="/blog">Blog</FooterNavLink>
-      <FooterNavLink href="#">Support</FooterNavLink>
-      <FooterNavLink href="#">Legal</FooterNavLink>
+      {/* <FooterNavLink href="#">Support</FooterNavLink> */}
+      <FooterNavLink href="/legal">Legal</FooterNavLink>
     </FooterNav>
   </footer>
 );
@@ -57,7 +57,7 @@ interface FooterNavLinkProps {
 }
 
 const FooterNavLink = (props: FooterNavLinkProps) => (
-  <a href={props.href} {...stylex.props(styles.link)}>
+  <a href={props.href} {...stylex.props(styles.link)} data-astro-prefetch>
     {props.children}
   </a>
 );

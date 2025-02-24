@@ -20,10 +20,10 @@ interface AnchorProps {
   textDecoration?: 'none';
 }
 
-const Aspect = (props: AnchorProps) => (
-  <a href={props.href} {...stylex.props(styles.anchor, props.textDecoration && styles.noDecoration)}>
+const Anchor = (props: AnchorProps) => (
+  <a href={props.href} {...stylex.props(styles.anchor, props.textDecoration && styles.noDecoration)} data-astro-prefetch>
     {props.children}
   </a>
 );
 
-export default Aspect;
+export default Anchor;

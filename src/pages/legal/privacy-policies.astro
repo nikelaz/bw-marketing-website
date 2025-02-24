@@ -1,0 +1,22 @@
+---
+import HeaderFooterLayout from '../../layouts/header-footer-layout.astro';
+import { Container, Row, Col } from '../../components/grid';
+import Heading from '../../components/heading';
+import Section from '../../components/section';
+import Stack from '../../components/stack';
+import Anchor from '../../components/anchor';
+---
+
+<HeaderFooterLayout
+	title="Privacy Policies - Budget Warden"
+	description="Privacy policies for the Budget Warden software and website."
+>
+	<Section>
+		<Container>
+			<Stack gap="md">
+				<Heading level="h1" size={40}>Privacy Policies</Heading>
+				<Anchor href="/legal/privacy-policies/mobile-app" textDecoration="none">Mobile Application Privacy Policy</Anchor>
+			</Stack>
+		</Container>
+	</Section>
+</HeaderFooterLayout>
