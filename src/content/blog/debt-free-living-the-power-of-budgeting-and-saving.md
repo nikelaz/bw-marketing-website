@@ -1,8 +1,8 @@
 ---
 title: "Debt-Free Living: The Power of Budgeting and Saving"
 date: 2024-09-22T16:12:00.000Z
-image: /public/uploads/debt-free-living-the-power-of-budgeting-and-saving-featured-image.svg
-thumbnail: /public/uploads/debt-free-living-the-power-of-budgeting-and-saving-featured-image.svg
+image: /uploads/debt-free-living-the-power-of-budgeting-and-saving-featured-image.svg
+thumbnail: /uploads/debt-free-living-the-power-of-budgeting-and-saving-featured-image.svg
 author: Dora Naydenova
 summary: Debt can feel like a weight that’s hard to lift, but embracing a
   debt-free lifestyle is not only achievable but also liberating.

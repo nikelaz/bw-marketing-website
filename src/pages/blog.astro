@@ -37,12 +37,12 @@ const posts = await getCollection('blog');
 				<Heading level="h1" size={40}>Blog</Heading>
 				
 				<Row largeGutter={true}>
-					{posts.map((post) => (
+					{posts.map((post, index) => (
 						<Col span={6} break="md" largeGutter={true}>
 							<Card>
 								<CardHeader>
 									<Aspect>
-										<img {...stylex.attrs(styles.thumbnail)} src={post.data.thumbnail.src} alt="" role="presentation" />
+										<img {...stylex.attrs(styles.thumbnail)} src={post.data.thumbnail} alt="" loading={index > 3 ? 'lazy' : 'eager'} role="presentation" />
 									</Aspect>
 								</CardHeader>
 								<Stack gap="md">

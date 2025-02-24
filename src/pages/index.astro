@@ -207,3 +207,27 @@ export const styles = stylex.create({
 		</Section>
 	</Container>
 </FooterLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"name": "Budget Warden",
+	"applicationCategory": "Finance",
+	"applicationSubCategory": "Personal Finance, Budgeting",
+	"operatingSystem": "iOS, Android, Web",
+	"offers": {
+		"@type": "Offer",
+		"price": 0,
+		"currency": "USD",
+	}
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"url": "https://www.budgetwarden.com",
+	"logo": "https://www.budgetwarden.com/uploads/logo.svg",
+	"name": "Budget Warden",
+	"description": "Budget Warden is a personal finance and budget tracking application for iOS, Android and Web.",
+	"email": "contact@budgetwarden.com",
+})} />

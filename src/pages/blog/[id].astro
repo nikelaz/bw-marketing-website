@@ -11,9 +11,10 @@ import Aspect from '../../components/aspect';
 import Paragraph from '../../components/paragraph';
 import { Tag, TagLabel, TagIcon } from '../../components/tag';
 import Anchor from '../../components/anchor';
-import blogThumbnail from '../../assets/blogs/blog-thumbnail.svg';
 import CalendarIcon from '../../assets/icons/calendar.svg';
 import UserIcon from '../../assets/icons/user.svg';
+import updateImageUrls from '../../helpers/update-image-urls';
+import './blog-article.css';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -59,10 +60,9 @@ const { Content } = await render(post);
 											</Tag>
 										</Col>
 									</Row>
-
 									<CardHeader>
 										<Aspect>
-											<img src={blogThumbnail.src} alt="Blog thumbnail" />
+											<img src={post.data.image} alt="" role="presentation" />
 										</Aspect>
 									</CardHeader>
 								</Stack>
@@ -79,57 +79,24 @@ const { Content } = await render(post);
 	</Section>
 </HeaderFooterLayout>
 
-<style is:global>
-	.blog_article {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-		line-height: 1.6;
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"headline": post.data.title,
+	"image": `https://www.budgetwarden.com/${post.data.image}`,
+	"thumbnailUrl": `https://www.budgetwarden.com/${post.data.thumbnail}`,
+	"author": {
+		"@type": "Person",
+		"name": post.data.author,
+		"affiliation": "Budget Warden"
+	},
+	"datePublished": post.data.date.toISOString(),
+	"publisher": {
+		"@type": "Organization",
+		"name": "Budget Warden",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://www.budgetwarden.com/public/logo.svg"
+		}
 	}
-
-	.blog_article p,
-	.blog_article h1,
-	.blog_article h2,
-	.blog_article h3,
-	.blog_article h4,
-	.blog_article h5,
-	.blog_article h6,
-	.blog_article ol,
-	.blog_article ul {
-		margin: 0;
-	}
-
-	.blog_article h2 {
-		font-size: 1.333rem;
-	}
-
-	.blog_article h3 {
-		font-size: 1.250rem;
-	}
-
-	.blog_article h4 {
-		font-size: 1.166rem;
-	}
-
-	.blog_article h5 {
-		font-size: 1.083rem;
-	}
-
-	.blog_article h6 {
-		font-size: 1rem;
-	}
-
-	.blog_article li {
-		margin-bottom: 1.25rem;
-	}
-
-	.blog_article img {
-		aspect-ratio: 16 / 9;
-		display: block;
-		width: 100%;
-		padding: 30px;
-		border-radius: 10px;
-		background-color: #F4F1FC;
-		margin: 2rem 0;
-	}
-</style>
+})} />
