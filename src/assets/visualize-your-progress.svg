@@ -4,29 +4,23 @@
       stroke-dasharray="2.43 2.43" />
     <rect x="8.19238" y="55.8781" width="204.12" height="12.15" rx="6.075" fill="#03318B" />
     <rect x="218.387" y="55.8781" width="99.63" height="12.15" rx="6.075" fill="#7D1641" />
-    <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="18.225" font-weight="bold"
-      letter-spacing="0em">
-      <tspan x="128.178" y="16.4004">5,000$</tspan>
+    <text fill="#2C1F51" font-size="18.225" font-weight="bold" text-anchor="middle">
+      <tspan x="159.5" y="16.4004">5,000$</tspan>
     </text>
-    <text fill="#2C1F51" xml:space="preserve" style="white-space: pre" font-size="13.365" font-weight="bold"
-      letter-spacing="0em">
-      <tspan x="133.592" y="34.7181">INCOME</tspan>
+    <text fill="#2C1F51" font-size="13.365" font-weight="bold" text-anchor="middle">
+      <tspan x="159.5" y="34.7181">INCOME</tspan>
     </text>
-    <text fill="#03318B" xml:space="preserve" style="white-space: pre" font-size="18.225" font-weight="bold"
-      letter-spacing="0em">
-      <tspan x="77.5301" y="103.88">3,500$</tspan>
+    <text fill="#03318B" font-size="18.225" font-weight="bold" text-anchor="middle">
+      <tspan x="111" y="103.88">3,500$</tspan>
     </text>
-    <text fill="#03318B" xml:space="preserve" style="white-space: pre" font-size="13.365" font-weight="bold"
-      letter-spacing="0em">
-      <tspan x="79.1401" y="122.198">PLANNED</tspan>
+    <text fill="#03318B" font-size="13.365" font-weight="bold" text-anchor="middle">
+      <tspan x="111" y="122.198">PLANNED</tspan>
     </text>
-    <text fill="#7D1641" xml:space="preserve" style="white-space: pre" font-size="18.225" font-weight="bold"
-      letter-spacing="0em">
-      <tspan x="236.912" y="103.88">1,500$</tspan>
+    <text fill="#7D1641" font-size="18.225" font-weight="bold" text-anchor="middle">
+      <tspan x="270" y="103.88">1,500$</tspan>
     </text>
-    <text fill="#7D1641" xml:space="preserve" style="white-space: pre" font-size="13.365" font-weight="bold"
-      letter-spacing="0em">
-      <tspan x="211.485" y="122.198">LEFT TO BUDGET</tspan>
+    <text fill="#7D1641" font-size="13.365" font-weight="bold" text-anchor="middle">
+      <tspan x="270" y="122.198">LEFT TO BUDGET</tspan>
     </text>
   </g>
   <defs>

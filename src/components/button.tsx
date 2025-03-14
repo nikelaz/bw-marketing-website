@@ -3,9 +3,9 @@ import { colors, fontSizes, fontWeights } from '../styles/theme.stylex';
 
 const styles = stylex.create({
   button: {
-    display: 'inline-flex',
+    display: 'inline-block',
     width: 'fit-content',
-    padding: '0.66rem 2.5rem',
+    padding: '0.8rem 2.5rem',
     fontSize: fontSizes['24'],
     fontWeight: fontWeights.medium,
     textDecoration: 'none',
@@ -18,6 +18,7 @@ const styles = stylex.create({
     borderRadius: '0.416rem',
     transition: '.2s background-color',
     outline: 'none',
+    textBox: 'trim-both cap alphabetic',
   },
   sm: {
     paddingLeft: '1.25rem',
