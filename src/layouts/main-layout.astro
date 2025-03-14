@@ -1,6 +1,7 @@
 ---
 import stylex from '@stylexjs/stylex';
 import { colors } from '../styles/theme.stylex';
+import CookieConsent from '../components/cookie-consent.astro';
 
 export const styles = stylex.create({
 	body: {
@@ -45,6 +46,7 @@ const {
 		<main {...stylex.attrs(styles.content)}>
 			<slot />
 		</main>
+		<CookieConsent />
 	</body>
 </html>
 

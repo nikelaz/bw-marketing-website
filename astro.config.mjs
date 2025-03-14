@@ -9,7 +9,11 @@ import partytown from '@astrojs/partytown';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.budgetwarden.com',
-  integrations: [react(), stylex(), partytown(), sitemap({
+  integrations: [react(), stylex(), partytown({
+    config: {
+      forward: ["dataLayer.push"]
+    }
+  }), sitemap({
     filter: (page) => page !== 'https://www.budgetwarden.com/admin/',
   })],
   prefetch: true,
