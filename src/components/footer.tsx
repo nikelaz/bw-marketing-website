@@ -45,6 +45,7 @@ const Footer = () => (
     <p {...stylex.props(styles.copy)}>© Budget Warden {currentYear}</p>
     <FooterNav>
       <button type="button" data-cc="show-preferencesModal" {...stylex.props(styles.link)}>Cookie Preferences</button>
+      <FooterNavLink href="https://stats.uptimerobot.com/uhjAiQS2xR" target="_blank">Systems Status</FooterNavLink>
       <FooterNavLink href="/blog">Blog</FooterNavLink>
       {/* <FooterNavLink href="#">Support</FooterNavLink> */}
       <FooterNavLink href="/legal">Legal</FooterNavLink>
@@ -61,11 +62,11 @@ const FooterNav = (props: GenericChildrenProps) => (
 interface FooterNavLinkProps {
   children: React.ReactNode;
   href: string;
-  component?: 'button';
+  target?: '_blank';
 }
 
 const FooterNavLink = (props: FooterNavLinkProps) => (
-  <a href={props.href} {...stylex.props(styles.link)} data-astro-prefetch>
+  <a href={props.href} {...stylex.props(styles.link)} data-astro-prefetch target={props.target} rel={props.target ? 'noopener noreferrer' : undefined}>
     {props.children}
   </a>
 );
