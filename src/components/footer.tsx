@@ -22,6 +22,12 @@ const styles = stylex.create({
     alignItems: 'center',
   },
   link: {
+    display: 'block',
+    cursor: 'pointer',
+    padding: 0,
+    border: 'none',
+    lineHeight: 1,
+    background: 'transparent',
     fontSize: fontSizes['20'],
     fontWeight: fontWeights.semibold,
     color: {
@@ -38,6 +44,7 @@ const Footer = () => (
   <footer {...stylex.props(styles.footer)}>
     <p {...stylex.props(styles.copy)}>© Budget Warden {currentYear}</p>
     <FooterNav>
+      <button type="button" data-cc="show-preferencesModal" {...stylex.props(styles.link)}>Cookie Preferences</button>
       <FooterNavLink href="/blog">Blog</FooterNavLink>
       {/* <FooterNavLink href="#">Support</FooterNavLink> */}
       <FooterNavLink href="/legal">Legal</FooterNavLink>
@@ -54,6 +61,7 @@ const FooterNav = (props: GenericChildrenProps) => (
 interface FooterNavLinkProps {
   children: React.ReactNode;
   href: string;
+  component?: 'button';
 }
 
 const FooterNavLink = (props: FooterNavLinkProps) => (
