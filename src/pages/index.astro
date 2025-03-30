@@ -34,11 +34,10 @@ export const styles = stylex.create({
 		position: 'absolute',
 		top: {
 			default: null,
-			[lg]: 0,
+			[lg]: 'auto',
 		},
 		bottom: {
 			default: 0,
-			[lg]: 'auto',
 		},
 		left: '50%',
 		transform: 'translateX(-50%)',
@@ -99,7 +98,7 @@ export const styles = stylex.create({
 									</Col>
 									<Col layout="fit">
 										<a href="https://apps.apple.com/us/app/budget-warden/id6741514133" target="_blank" rel="noopener">
-											<AppStoreBtn {...stylex.attrs(styles.storeBtn)} aria-label="download on the app store" />
+											<AppStoreBtn {...stylex.attrs(styles.storeBtn)} aria-label="download on the app store" width="172" height="58" />
 										</a>
 									</Col>
 									<!--

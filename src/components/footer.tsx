@@ -7,6 +7,7 @@ const styles = stylex.create({
     flexWrap: 'wrap',
     gap: '1.25rem',
     alignItems: 'center',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     padding: '2.5rem 0',
     borderTop: '1px solid',
@@ -20,6 +21,7 @@ const styles = stylex.create({
     display: 'flex',
     gap: '1.25rem',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
   link: {
     display: 'block',

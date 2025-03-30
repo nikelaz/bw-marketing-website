@@ -103,10 +103,7 @@ const styles = stylex.create({
       [xl]: '100%',
     },
     height: 'min-content',
-    padding: {
-      default: '0.5rem 0',
-      [xl]: '0.5rem 0 0.5rem 0.7rem',
-    },
+    padding: '0.5rem 0',
     fontSize: fontSizes['20'],
     fontWeight: fontWeights.semibold,
     lineHeight: 1,
@@ -114,15 +111,7 @@ const styles = stylex.create({
     color: colors.black,
     borderBottom: {
       default: '2px solid transparent',
-      [xl]: 'none',
-    },
-    borderLeftWidth: {
-      default: 0,
-      [xl]: '2px',
-    },
-    borderLeftStyle: {
-      default: 'none',
-      [xl]: 'solid',
+      [xl]: 'none'
     },
     borderColor: {
       default: 'transparent',
@@ -145,6 +134,7 @@ const styles = stylex.create({
   },
   drawer: {
     display: 'flex',
+    minWidth: '280px',
     zIndex: 3,
     transform: {
       default: 'none',
@@ -160,7 +150,7 @@ const styles = stylex.create({
     },
     gap: {
       default: '2rem',
-      [xl]: '0.5rem',
+      [xl]: '0.8rem',
     },
     position: {
       default: 'static',
@@ -197,9 +187,16 @@ const styles = stylex.create({
     cursor: 'pointer',
     marginLeft: 'auto',
     marginBottom: '1rem',
+    backgroundColor: 'transparent',
     display: {
       default: 'none',
       [xl]: 'block'
+    }
+  },
+  navCta: {
+    width: {
+      default: 'none',
+      [xl]: '100%',
     }
   }
 });
