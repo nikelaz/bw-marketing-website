@@ -182,7 +182,6 @@ const styles = stylex.create({
     transform: 'translateX(0)',
   },
   close: {
-    backgroundColor: 'none',
     border: 'none',
     cursor: 'pointer',
     marginLeft: 'auto',

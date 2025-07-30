@@ -7,7 +7,6 @@ const styles = stylex.create({
     flexWrap: 'wrap',
     gap: '1.25rem',
     alignItems: 'center',
-    flexWrap: 'wrap',
     justifyContent: 'space-between',
     padding: '2.5rem 0',
     borderTop: '1px solid',
@@ -46,7 +45,6 @@ const Footer = () => (
   <footer {...stylex.props(styles.footer)}>
     <p {...stylex.props(styles.copy)}>© Budget Warden {currentYear}</p>
     <FooterNav>
-      <button type="button" data-cc="show-preferencesModal" {...stylex.props(styles.link)}>Cookie Preferences</button>
       <FooterNavLink href="https://stats.uptimerobot.com/uhjAiQS2xR" target="_blank">Systems Status</FooterNavLink>
       <FooterNavLink href="/blog">Blog</FooterNavLink>
       {/* <FooterNavLink href="#">Support</FooterNavLink> */}
