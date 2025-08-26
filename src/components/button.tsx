@@ -35,12 +35,13 @@ interface ButtonProps {
   href: string;
   size?: 'sm';
   fontSize?: 20;
+  x?: Parameters<typeof stylex.props>[0];
 }
 
 const Button = (props: ButtonProps) => (
   <a
     href={props.href}
-    {...stylex.props(styles.button, props.size && styles[props.size], props.fontSize && styles[`fs${props.fontSize}`])}
+    {...stylex.props(styles.button, props.size && styles[props.size], props.fontSize && styles[`fs${props.fontSize}`], props.x && props.x)}
   >
     {props.children}
   </a>

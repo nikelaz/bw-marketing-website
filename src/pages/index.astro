@@ -67,9 +67,18 @@ export const styles = stylex.create({
 	},
 	storeBtn: {
 		display: 'block',
-		width: 'auto',
-		height: '100%'
-	}
+  },
+  ctaRow: {
+    display: 'flex',
+    gap: '1.25rem',
+    flexWrap: 'wrap',
+  },
+  signUpBtn: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '60px',
+  }
 });
 ---
 
@@ -93,22 +102,15 @@ export const styles = stylex.create({
 									</Col>
 								</Row>
 								<Row>
-									<Col layout="fit">
-										<Button href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
-									</Col>
-									<Col layout="fit">
-										<a href="https://apps.apple.com/us/app/budget-warden/id6741514133" target="_blank" rel="noopener">
-											<AppStoreBtn {...stylex.attrs(styles.storeBtn)} aria-label="download on the app store" width="172" height="58" />
-										</a>
-									</Col>
-									<!--
-									<Col layout="fit">
-										<a href="#">
-											<GooglePlayBtn {...stylex.attrs(styles.storeBtn)} aria-label="get it on google play" />
-										</a>
-									</Col>
-									-->
-								</Row>
+                <div {...stylex.attrs(styles.ctaRow)}>
+                    <Button x={styles.signUpBtn} href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
+                  <a href="https://apps.apple.com/us/app/budget-warden/id6741514133" target="_blank" rel="noopener">
+                    <AppStoreBtn {...stylex.attrs(styles.storeBtn)} aria-label="download on the app store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.lazarovco.budgetwarden&pcampaignid=web_share" target="_blank" rel="noopener">
+                    <GooglePlayBtn {...stylex.attrs(styles.storeBtn)} aria-label="get it on google play" />
+                  </a>
+								</div>
 							</Stack>
 						</div>
 					</Col>
