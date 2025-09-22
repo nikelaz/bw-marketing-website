@@ -1,8 +1,8 @@
 ---
 title: " A Life Beyond Budgeting: Achieving Your Dreams with Budget Warden"
 date: 2025-09-24T10:08:00.000+03:00
-image: /uploads/8.svg
-thumbnail: /uploads/8.svg
+image: /uploads/svg8-1.svg
+thumbnail: /uploads/svg8-1.svg
 author: Dora Naydenova
 summary: Using Budget Warden, users are encouraged to embrace the journey of
   financial management, learning from their spending habits rather than feeling
