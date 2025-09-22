@@ -15,6 +15,7 @@ export const colors = stylex.defineVars({
 
 export const fontSizes = stylex.defineVars({
   '20': '0.833rem',
+  '22': '0.917rem',
   '24': '1rem',
   '26': '1.083rem',
   '28': '1.166rem',

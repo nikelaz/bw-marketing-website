@@ -3,7 +3,7 @@ import { fontSizes } from '../styles/theme.stylex';
 
 interface ParagraphProps {
   children: React.ReactNode;
-  fontSize?: 26 | 28;
+  fontSize?: 22 | 24 | 26 | 28;
 }
 
 const Paragraph = (props: ParagraphProps) => (
@@ -16,6 +16,12 @@ const styles = stylex.create({
   p: {
     margin: 0,
     lineHeight: 1.5,
+  },
+  fs22: {
+    fontSize: fontSizes['22'],
+  },
+  fs24: {
+    fontSize: fontSizes['24'],
   },
   fs26: {
     fontSize: fontSizes['26'],
