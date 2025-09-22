@@ -20,7 +20,7 @@ Budgeting is more than just a spreadsheet of income and expenses. It serves as a
 3. Savings Goals: Whether it's saving for a vacation, a new home, or retirement, budgeting helps individuals prioritize their savings goals. By allocating funds wisely, users can work steadily towards achieving their dreams.
 4. Stress Reduction: Financial worries often lead to anxiety and stress. A solid budget can help mitigate this by providing a clearer financial picture, allowing for proactive planning rather than reactive decision-making.
 
-![An illustration of a budgeting list, including groceries, house loan, travel. ](/uploads/2.svg)
+![A budgeting list that includes grocery, car loan, medicines as categories.](/uploads/2.svg)
 
 ### **Beyond the Numbers: Fueling Dreams and Aspirations**
 
@@ -52,4 +52,4 @@ Choose to see budgeting as your stepping stone to a brighter, more liberated fut
 
 ### **Call to Action**
 
-Ready to transform your financial journey? Don’t wait any longer! Follow this link to[ install Budget Warden](https://www.budgetwarden.com/) and take the first step towards achieving your dreams. Experience the power of effective budgeting in your life today-try it now!
+Ready to transform your financial journey? Don’t wait any longer! Follow this link to [install Budget Warden](https://www.budgetwarden.com/) and take the first step towards achieving your dreams. Experience the power of effective budgeting in your life today-try it now!
