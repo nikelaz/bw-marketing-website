@@ -17,15 +17,28 @@ const styles = stylex.create({
   xl: {
     gap: '3.333rem',
   },
+  jCenter: {
+    justifyContent: 'center',
+  },
+  aCenter: {
+    alignItems: 'center',
+  },
 });
 
 interface StackProps {
   children: React.ReactNode;
   gap: 'sm' | 'md' | 'lg' | 'xl';
+  justify?: 'center';
+  align?: 'center';
 }
 
 const Stack = (props: StackProps) => (
-  <div {...stylex.props(styles.stack, styles[props.gap])}>
+  <div {...stylex.props(
+    styles.stack,
+    styles[props.gap],
+    props.justify === 'center' && styles.jCenter,
+    props.align === 'center' && styles.aCenter
+  )}>
     {props.children}
   </div>
 );

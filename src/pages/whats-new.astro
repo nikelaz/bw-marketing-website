@@ -24,11 +24,34 @@ export const styles = stylex.create({
 		maxWidth: '100%',
 		maxHeight: '100%',
 	},
+  demoWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    aspectRatio: '9/20.4',
+    maxWidth: '280px',
+    margin: '0 auto',
+  },
+  iOSVideo: {
+    maxWidth: '100%',
+    overflow: 'hidden',
+    borderRadius: '40px',
+    aspectRatio: '215/466',
+  },
+  androidVideo: {
+    maxWidth: '100%',
+    overflow: 'hidden',
+    borderRadius: '15px',
+  },
 });
 
 const posts = await getCollection('blog');
 ---
 
+<head>
+  <link rel="preload" as="video" href="/videos/apple-google-auth.mp4" type="video/mp4" />
+  <link rel="preload" as="image" href="/videos/apple-google-auth.jpg" fetchpriority="high" />
+</head>
 <HeaderFooterLayout
 	title="What's New - v1.5.1 - Budget Warden"
 	description="Explore the Budget Warden blog for expert tips, personal finance advice, and practical budgeting strategies. Stay informed with the latest articles to help you manage your money and take control of your financial future."
@@ -47,8 +70,9 @@ const posts = await getCollection('blog');
               <Row largeGutter={true}>
                 <Col span={4} largeGutter={true} break="md">
                   <Stack gap="sm">
-                      <div title="ios-google-auth">
-                        <video autoplay loop muted playsinline loading="eager" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
+                    <div {...stylex.attrs(styles.demoWrapper)}>
+                      <div title="iOS Apple and Google Authentication Demo">
+                        <video controls autoplay muted loop playsinline {...stylex.attrs(styles.iOSVideo)} poster="/videos/apple-google-auth.jpg">
                           <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
                           <p>
                             Your browser doesn't support HTML video. Here is a
@@ -56,24 +80,25 @@ const posts = await getCollection('blog');
                           </p>
                         </video>
                       </div>
-                      <div title="android-google-auth" hidden>
-                        <video autoplay loop muted playsinline loading="eager" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
-                          <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
+                      <div title="Android Google Authentication Demo" hidden>
+                        <video data-lazy controls autoplay loop muted playsinline {...stylex.attrs(styles.androidVideo)}>
+                          <source data-src="/videos/android-google-auth.mp4" type="video/mp4" />
                           <p>
                             Your browser doesn't support HTML video. Here is a
-                            <a href="/videos/apple-google-auth.mp4" download="budget-warden-v1.5.1-apple-google-auth.mp4">link to the video</a> instead.
+                            <a href="/videos/android-google-auth.mp4" download="budget-warden-v1.5.1-android-google-auth.mp4">link to the video</a> instead.
                           </p>
                         </video>
                       </div>
-                    <div style="display: flex; justify-content: center">
+                    </div>
+                    <Stack align="center">
                       <Tabs
                         client:only
                         tabs={[
-                          { label: "iOS", id: "ios-google-auth" },
-                          { label: "Android", id: "android-google-auth" },
+                          { label: "iOS", id: "iOS Apple and Google Authentication Demo" },
+                          { label: "Android", id: "Android Google Authentication Demo" },
                         ]}
                       />
-                    </div>
+                    </Stack>
                   </Stack>
                 </Col>
                 <Col span={8} largeGutter={true} break="md"> 
@@ -89,13 +114,37 @@ const posts = await getCollection('blog');
               </Row>
               <Row largeGutter={true}>
                 <Col span={4} largeGutter={true} break="md"> 
-                  <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 40px; overflow: hidden;">
-                    <source src="/videos/swipe-to-delete.mp4" type="video/mp4" />
-                    <p>
-                      Your browser doesn't support HTML video. Here is a
-                      <a href="/videos/swipe-to-delete.mp4" download="budget-warden-v1.5.1-swipe-to-delete.mp4">link to the video</a> instead.
-                    </p>
-                  </video>
+                  <Stack gap="sm">
+                    <div {...stylex.attrs(styles.demoWrapper)}>
+                      <div title="iOS Swipe to Delete Demo">
+                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
+                          <source data-src="/videos/swipe-to-delete.mp4" type="video/mp4" />
+                          <p>
+                            Your browser doesn't support HTML video. Here is a
+                            <a href="/videos/swipe-to-delete.mp4" download="budget-warden-v1.5.1-swipe-to-delete.mp4">link to the video</a> instead.
+                          </p>
+                        </video>
+                      </div>
+                      <div title="Android Swipe to Delete Demo" hidden>
+                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
+                          <source data-src="/videos/android-swipe-to-delete.mp4" type="video/mp4" />
+                          <p>
+                            Your browser doesn't support HTML video. Here is a
+                            <a href="/videos/android-swipe-to-delete.mp4" download="budget-warden-v1.5.1-android-swipe-to-delete.mp4">link to the video</a> instead.
+                          </p>
+                        </video>
+                      </div>
+                    </div>
+                    <Stack align="center">
+                      <Tabs
+                        client:only
+                        tabs={[
+                          { label: "iOS", id: "iOS Swipe to Delete Demo" },
+                          { label: "Android", id: "Android Swipe to Delete Demo" },
+                        ]}
+                      />
+                    </Stack>
+                  </Stack>
                 </Col>
                 <Col span={8} largeGutter={true} break="md"> 
                   <Stack gap="md">
@@ -109,13 +158,38 @@ const posts = await getCollection('blog');
               </Row>
               <Row largeGutter={true}>
                 <Col span={4} largeGutter={true} break="md">
-                  <video autoplay loop muted playsinline loading="lazy" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
-                    <source src="/videos/transactions-view-in-categories.mp4" type="video/mp4" />
-                    <p>
-                      Your browser doesn't support HTML video. Here is a
-                      <a href="/videos/transactions-view-in-categories.mp4" download="budget-warden-v1.5.1-transactions-view-in-categories.mp4">link to the video</a> instead.
-                    </p>
-                  </video>
+                  <Stack gap="sm">
+                    <div {...stylex.attrs(styles.demoWrapper)}>
+                      <div title="iOS Transactions View in Categories Demo">
+                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
+                          <source data-src="/videos/transactions-view-in-categories.mp4" type="video/mp4" />
+                          <p>
+                            Your browser doesn't support HTML video. Here is a
+                            <a href="/videos/transactions-view-in-categories.mp4" download="budget-warden-v1.5.1-transactions-view-in-categories.mp4">link to the video</a> instead.
+                          </p>
+                        </video>
+                      </div>
+                      <div title="Android Transactions View in Categories Demo" hidden>
+                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
+                          <source data-src="/videos/android-transactions-view-in-categories.mp4" type="video/mp4"/>
+                          <p>
+                            Your browser doesn't support HTML video. Here is a
+                            <a href="/videos/android-transactions-view-in-categories.mp4" download="budget-warden-v1.5.1-android-transactions-view-in-categories.mp4">link to the video</a> instead.
+                          </p>
+                        </video>
+                      </div>
+                    </div>
+                    <Stack align="center">
+                      <Tabs
+                        client:only
+                        tabs={[
+                          { label: "iOS", id: "iOS Transactions View in Categories Demo" },
+                          { label: "Android", id: "Android Transactions View in Categories Demo" },
+                        ]}
+                      />
+                    </Stack>
+                  </Stack>
+
                 </Col>
                 <Col span={8} largeGutter={true} break="md"> 
                   <Stack gap="md">
@@ -134,3 +208,31 @@ const posts = await getCollection('blog');
 		</Container>
 	</Section>
 </HeaderFooterLayout>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function() {
+    var lazyVideos = [].slice.call(document.querySelectorAll("video[data-lazy]"));
+
+    if ("IntersectionObserver" in window) {
+      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(video) {
+          if (video.isIntersecting) {
+            for (var source in video.target.children) {
+              var videoSource = video.target.children[source];
+              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = videoSource.dataset.src;
+              }
+            }
+
+            video.target.load();
+            lazyVideoObserver.unobserve(video.target);
+          }
+        });
+      });
+
+      lazyVideos.forEach(function(lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+      });
+    }
+  });
+</script>
