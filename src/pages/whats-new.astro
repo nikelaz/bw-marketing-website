@@ -13,6 +13,7 @@ import { Tag, TagLabel, TagIcon } from '../components/tag';
 import Anchor from '../components/anchor';
 import getFormattedDate from '../helpers/get-formatted-date';
 import Tabs from '../components/tabs';
+import Figure from '../components/figure';
 
 import blogThumbnail from '../assets/blogs/blog-thumbnail.svg';
 import CalendarIcon from '../assets/icons/calendar.svg';
@@ -35,7 +36,7 @@ const posts = await getCollection('blog');
 	<Section>
 		<Container>
       <Row align="center">
-        <Col span={8} break="lg">
+        <Col span={10} break="lg">
           <Stack gap="lg">
             <Heading level="h1" size={40}>What's New</Heading>
             <Stack gap="lg">
@@ -44,28 +45,26 @@ const posts = await getCollection('blog');
                 <Paragraph fontSize={22}>Released: <time datetime="2025-09-21">21 September 2025</time></Paragraph>
               </Stack>
               <Row largeGutter={true}>
-                <Col span={5} largeGutter={true} break="md">
+                <Col span={4} largeGutter={true} break="md">
                   <Stack gap="sm">
-                    <div title="ios-google-auth">
-                      <video autoplay muted loading="eager" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
-                        <source src="/videos/apple-google-auth.webm" type="video/webm" />
-                        <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
-                        <p>
-                          Your browser doesn't support HTML video. Here is a
-                          <a href="/videos/apple-google-auth.mp4" download="budget-warden-v1.5.1-apple-google-auth.mp4">link to the video</a> instead.
-                        </p>
-                      </video>
-                    </div>
-                    <div title="android-google-auth" hidden>
-                      <video autoplay muted loading="eager" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
-                        <source src="/videos/apple-google-auth.webm" type="video/webm" />
-                        <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
-                        <p>
-                          Your browser doesn't support HTML video. Here is a
-                          <a href="/videos/apple-google-auth.mp4" download="budget-warden-v1.5.1-apple-google-auth.mp4">link to the video</a> instead.
-                        </p>
-                      </video>
-                    </div>
+                      <div title="ios-google-auth">
+                        <video autoplay loop muted playsinline loading="eager" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
+                          <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
+                          <p>
+                            Your browser doesn't support HTML video. Here is a
+                            <a href="/videos/apple-google-auth.mp4" download="budget-warden-v1.5.1-apple-google-auth.mp4">link to the video</a> instead.
+                          </p>
+                        </video>
+                      </div>
+                      <div title="android-google-auth" hidden>
+                        <video autoplay loop muted playsinline loading="eager" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
+                          <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
+                          <p>
+                            Your browser doesn't support HTML video. Here is a
+                            <a href="/videos/apple-google-auth.mp4" download="budget-warden-v1.5.1-apple-google-auth.mp4">link to the video</a> instead.
+                          </p>
+                        </video>
+                      </div>
                     <div style="display: flex; justify-content: center">
                       <Tabs
                         client:only
@@ -77,7 +76,7 @@ const posts = await getCollection('blog');
                     </div>
                   </Stack>
                 </Col>
-                <Col span={7} largeGutter={true} break="md"> 
+                <Col span={8} largeGutter={true} break="md"> 
                   <Stack gap="md">
                     <Heading level="h3" size={28}>Sign In with Apple and Google Accounts</Heading>
                     <Stack gap="sm">
@@ -89,9 +88,8 @@ const posts = await getCollection('blog');
                 </Col>
               </Row>
               <Row largeGutter={true}>
-                <Col span={5} largeGutter={true} break="md">
-                  <video autoplay muted loop loading="lazy" width="280" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
-                    <source src="/videos/swipe-to-delete.webm" type="video/webm" />
+                <Col span={4} largeGutter={true} break="md"> 
+                  <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 40px; overflow: hidden;">
                     <source src="/videos/swipe-to-delete.mp4" type="video/mp4" />
                     <p>
                       Your browser doesn't support HTML video. Here is a
@@ -99,7 +97,7 @@ const posts = await getCollection('blog');
                     </p>
                   </video>
                 </Col>
-                <Col span={7} largeGutter={true} break="md"> 
+                <Col span={8} largeGutter={true} break="md"> 
                   <Stack gap="md">
                     <Heading level="h3" size={28}>Swipe to Delete Budgets, Categories and Transactions</Heading>
                     <Stack gap="sm">
@@ -110,9 +108,8 @@ const posts = await getCollection('blog');
                 </Col>
               </Row>
               <Row largeGutter={true}>
-                <Col span={5} largeGutter={true} break="md">
-                  <video autoplay muted loop loading="lazy" width="280" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
-                    <source src="/videos/transactions-view-in-categories.webm" type="video/webm" />
+                <Col span={4} largeGutter={true} break="md">
+                  <video autoplay loop muted playsinline loading="lazy" style="max-width: 100%; border-radius: 40px; overflow: hidden;">
                     <source src="/videos/transactions-view-in-categories.mp4" type="video/mp4" />
                     <p>
                       Your browser doesn't support HTML video. Here is a
@@ -120,7 +117,7 @@ const posts = await getCollection('blog');
                     </p>
                   </video>
                 </Col>
-                <Col span={7} largeGutter={true} break="md"> 
+                <Col span={8} largeGutter={true} break="md"> 
                   <Stack gap="md">
                     <Heading level="h3" size={28}>View Transactions in Each Category</Heading>
                     <Stack gap="sm">
