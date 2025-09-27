@@ -9,7 +9,10 @@ export const styles = stylex.create({
 		height: '100%',
 		margin: 0,
 		backgroundColor: colors.ash200,
-		fontSize: '24px',
+    fontSize: {
+      default: '24px',
+      '@media (max-width: 640px)': '19px',
+    },
 	},
 	content: {
 		overflow: 'hidden',

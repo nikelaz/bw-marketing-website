@@ -32,6 +32,7 @@ const Header = (props: HeaderProps) => {
             </svg>
           </button>
           <HeaderNavLink href="/" currentPath={props.currentPath}>Overview</HeaderNavLink>
+          <HeaderNavLink href="/whats-new" currentPath={props.currentPath}>What's New</HeaderNavLink>
           <HeaderNavLink href="/blog/" currentPath={props.currentPath}>Blog</HeaderNavLink>
           {/* <HeaderNavLink href="#" currentPath={props.currentPath}>Support</HeaderNavLink> */}
           <HeaderNavLink href="/legal/" currentPath={props.currentPath}>Legal</HeaderNavLink>
