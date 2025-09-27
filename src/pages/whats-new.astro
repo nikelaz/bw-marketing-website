@@ -14,10 +14,11 @@ import Anchor from '../components/anchor';
 import getFormattedDate from '../helpers/get-formatted-date';
 import Tabs from '../components/tabs';
 import Figure from '../components/figure';
+import { Image } from 'astro:assets';
 
-import blogThumbnail from '../assets/blogs/blog-thumbnail.svg';
 import CalendarIcon from '../assets/icons/calendar.svg';
 import UserIcon from '../assets/icons/user.svg';
+import webRedesignThumb from '../assets/web-redesign-v1.5.svg';
 
 export const styles = stylex.create({
 	thumbnail: {
@@ -28,20 +29,28 @@ export const styles = stylex.create({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    aspectRatio: '9/20.4',
-    maxWidth: '280px',
+    aspectRatio: '593/646',
     margin: '0 auto',
+    backgroundImage: 'url("/whats-new-video-background.svg")',
+    backgroundSize: 'contain',
   },
   iOSVideo: {
-    maxWidth: '100%',
+    maxWidth: '280px',
     overflow: 'hidden',
     borderRadius: '40px',
-    aspectRatio: '215/466',
   },
   androidVideo: {
-    maxWidth: '100%',
+    maxWidth: '280px',
     overflow: 'hidden',
     borderRadius: '15px',
+  },
+  webVideo: {
+    maxWidth: '100%',
+    overflow: 'hidden',
+    borderRadius: '15px'
+  },
+  imageDemo: {
+    maxWidth: '100%',
   },
 });
 
@@ -58,153 +67,181 @@ const posts = await getCollection('blog');
 >
 	<Section>
 		<Container>
-      <Row align="center">
-        <Col span={10} break="lg">
-          <Stack gap="lg">
-            <Heading level="h1" size={40}>What's New</Heading>
-            <Stack gap="lg">
-              <Stack gap="sm">
-                <Heading level="h2" size={30}>Version 1.5.1</Heading>
-                <Paragraph fontSize={22}>Released: <time datetime="2025-09-21">21 September 2025</time></Paragraph>
-              </Stack>
-              <Row largeGutter={true}>
-                <Col span={4} largeGutter={true} break="md">
-                  <Stack gap="sm">
-                    <div {...stylex.attrs(styles.demoWrapper)}>
-                      <div title="iOS Apple and Google Authentication Demo">
-                        <video controls autoplay muted loop playsinline {...stylex.attrs(styles.iOSVideo)} poster="/videos/apple-google-auth.jpg">
-                          <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
-                          <p>
-                            Your browser doesn't support HTML video. Here is a
-                            <a href="/videos/apple-google-auth.mp4" download="budget-warden-v1.5.1-apple-google-auth.mp4">link to the video</a> instead.
-                          </p>
-                        </video>
-                      </div>
-                      <div title="Android Google Authentication Demo" hidden>
-                        <video data-lazy controls autoplay loop muted playsinline {...stylex.attrs(styles.androidVideo)}>
-                          <source data-src="/videos/android-google-auth.mp4" type="video/mp4" />
-                          <p>
-                            Your browser doesn't support HTML video. Here is a
-                            <a href="/videos/android-google-auth.mp4" download="budget-warden-v1.5.1-android-google-auth.mp4">link to the video</a> instead.
-                          </p>
-                        </video>
-                      </div>
-                    </div>
-                    <Stack align="center">
-                      <Tabs
-                        client:only
-                        tabs={[
-                          { label: "iOS", id: "iOS Apple and Google Authentication Demo" },
-                          { label: "Android", id: "Android Google Authentication Demo" },
-                        ]}
-                      />
-                    </Stack>
-                  </Stack>
-                </Col>
-                <Col span={8} largeGutter={true} break="md"> 
-                  <Stack gap="md">
-                    <Heading level="h3" size={28}>Sign In with Apple and Google Accounts</Heading>
-                    <Stack gap="sm">
-                      <Paragraph fontSize={24}>We know it's annoying to create custom accounts for every application and service. That's why we implemented authentication with Google and Apple accounts.</Paragraph>
-                      <Paragraph fontSize={24}>iOS and Web users can authenticate with both Apple and Google accounts, while Android users can only authenticate with their Google account.</Paragraph>
-                      <Paragraph fontSize={24}>We don't support migrations from a custom email account to an Apple/Google account yet.</Paragraph>
-                    </Stack>
-                  </Stack>
-                </Col>
-              </Row>
-              <Row largeGutter={true}>
-                <Col span={4} largeGutter={true} break="md"> 
-                  <Stack gap="sm">
-                    <div {...stylex.attrs(styles.demoWrapper)}>
-                      <div title="iOS Swipe to Delete Demo">
-                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
-                          <source data-src="/videos/swipe-to-delete.mp4" type="video/mp4" />
-                          <p>
-                            Your browser doesn't support HTML video. Here is a
-                            <a href="/videos/swipe-to-delete.mp4" download="budget-warden-v1.5.1-swipe-to-delete.mp4">link to the video</a> instead.
-                          </p>
-                        </video>
-                      </div>
-                      <div title="Android Swipe to Delete Demo" hidden>
-                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
-                          <source data-src="/videos/android-swipe-to-delete.mp4" type="video/mp4" />
-                          <p>
-                            Your browser doesn't support HTML video. Here is a
-                            <a href="/videos/android-swipe-to-delete.mp4" download="budget-warden-v1.5.1-android-swipe-to-delete.mp4">link to the video</a> instead.
-                          </p>
-                        </video>
-                      </div>
-                    </div>
-                    <Stack align="center">
-                      <Tabs
-                        client:only
-                        tabs={[
-                          { label: "iOS", id: "iOS Swipe to Delete Demo" },
-                          { label: "Android", id: "Android Swipe to Delete Demo" },
-                        ]}
-                      />
-                    </Stack>
-                  </Stack>
-                </Col>
-                <Col span={8} largeGutter={true} break="md"> 
-                  <Stack gap="md">
-                    <Heading level="h3" size={28}>Swipe to Delete Budgets, Categories and Transactions</Heading>
-                    <Stack gap="sm">
-                      <Paragraph fontSize={24}>We added support for the familiar swipe to delete gesture to budgets, categories and transactions to make removal of items easier.</Paragraph>
-                      <Paragraph fontSize={24}>Deletion will still ask for confirmation to avoid accidental removals.</Paragraph>
-                    </Stack>
-                  </Stack>
-                </Col>
-              </Row>
-              <Row largeGutter={true}>
-                <Col span={4} largeGutter={true} break="md">
-                  <Stack gap="sm">
-                    <div {...stylex.attrs(styles.demoWrapper)}>
-                      <div title="iOS Transactions View in Categories Demo">
-                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
-                          <source data-src="/videos/transactions-view-in-categories.mp4" type="video/mp4" />
-                          <p>
-                            Your browser doesn't support HTML video. Here is a
-                            <a href="/videos/transactions-view-in-categories.mp4" download="budget-warden-v1.5.1-transactions-view-in-categories.mp4">link to the video</a> instead.
-                          </p>
-                        </video>
-                      </div>
-                      <div title="Android Transactions View in Categories Demo" hidden>
-                        <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
-                          <source data-src="/videos/android-transactions-view-in-categories.mp4" type="video/mp4"/>
-                          <p>
-                            Your browser doesn't support HTML video. Here is a
-                            <a href="/videos/android-transactions-view-in-categories.mp4" download="budget-warden-v1.5.1-android-transactions-view-in-categories.mp4">link to the video</a> instead.
-                          </p>
-                        </video>
-                      </div>
-                    </div>
-                    <Stack align="center">
-                      <Tabs
-                        client:only
-                        tabs={[
-                          { label: "iOS", id: "iOS Transactions View in Categories Demo" },
-                          { label: "Android", id: "Android Transactions View in Categories Demo" },
-                        ]}
-                      />
-                    </Stack>
-                  </Stack>
-
-                </Col>
-                <Col span={8} largeGutter={true} break="md"> 
-                  <Stack gap="md">
-                    <Heading level="h3" size={28}>View Transactions in Each Category</Heading>
-                    <Stack gap="sm">
-                      <Paragraph fontSize={24}>You can now view the current budget's transactions for a specific category underneath it's details.</Paragraph>
-                      <Paragraph fontSize={24}>You can also utilize the excellent full text search in the transactions view for more specific searches.</Paragraph>
-                    </Stack>
-                  </Stack>
-                </Col>
-              </Row>
-            </Stack>
+      <Stack gap="lg">
+        <Heading level="h1" size={40}>What's New</Heading>
+        <Stack gap="xl">
+          <Stack gap="sm">
+            <Heading level="h2" size={30}>Version 1.5.1</Heading>
+            <Paragraph fontSize={22}>Released: <time datetime="2025-09-27">27 September 2025</time></Paragraph>
           </Stack>
-        </Col>
-      </Row>
+          <Row largeGutter={true}>
+            <Col span={6} largeGutter={true} break="md">
+              <Stack gap="sm">
+                <div {...stylex.attrs(styles.demoWrapper)}>
+                  <div title="iOS Apple and Google Authentication Demo">
+                    <video controls autoplay muted loop playsinline {...stylex.attrs(styles.iOSVideo)} poster="/videos/apple-google-auth.jpg">
+                      <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
+                      <p>
+                        Your browser doesn't support HTML video. Here is a
+                        <a href="/videos/apple-google-auth.mp4" download="budget-warden-v1.5.1-apple-google-auth.mp4">link to the video</a> instead.
+                      </p>
+                    </video>
+                  </div>
+                  <div title="Android Google Authentication Demo" hidden>
+                    <video data-lazy controls autoplay loop muted playsinline {...stylex.attrs(styles.androidVideo)}>
+                      <source data-src="/videos/android-google-auth.mp4" type="video/mp4" />
+                      <p>
+                        Your browser doesn't support HTML video. Here is a
+                        <a href="/videos/android-google-auth.mp4" download="budget-warden-v1.5.1-android-google-auth.mp4">link to the video</a> instead.
+                      </p>
+                    </video>
+                  </div>
+                  <div title="Web Google Authentication Demo" hidden>
+                    <video data-lazy controls autoplay loop muted playsinline {...stylex.attrs(styles.webVideo)}>
+                      <source data-src="/videos/web-google-auth.mp4" type="video/mp4" />
+                      <p>
+                        Your browser doesn't support HTML video. Here is a
+                        <a href="/videos/android-google-auth.mp4" download="budget-warden-v1.5.1-web-google-auth.mp4">link to the video</a> instead.
+                      </p>
+                    </video>
+                  </div>
+                </div>
+                <Stack align="center">
+                  <Tabs
+                    client:only
+                    tabs={[
+                      { label: "iOS", id: "iOS Apple and Google Authentication Demo" },
+                      { label: "Android", id: "Android Google Authentication Demo" },
+                      { label: "Web", id: "Web Google Authentication Demo" },
+                    ]}
+                  />
+                </Stack>
+              </Stack>
+            </Col>
+            <Col span={6} largeGutter={true} break="md"> 
+              <Stack gap="md">
+                <Heading level="h3" size={28}>Sign In with Apple and Google Accounts</Heading>
+                <Stack gap="sm">
+                  <Paragraph fontSize={24}>We know it's annoying to create custom accounts for every application and service. That's why we implemented authentication with Google and Apple accounts.</Paragraph>
+                  <Paragraph fontSize={24}>iOS and Web users can authenticate with both Apple and Google accounts, while Android users can only authenticate with their Google account.</Paragraph>
+                  <Paragraph fontSize={24}>We don't support migrations from a custom email account to an Apple/Google account yet.</Paragraph>
+                </Stack>
+              </Stack>
+            </Col>
+          </Row>
+          <Row largeGutter={true}>
+            <Col span={6} largeGutter={true} break="md"> 
+              <Stack gap="sm">
+                <div {...stylex.attrs(styles.demoWrapper)}>
+                  <div title="iOS Swipe to Delete Demo">
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
+                      <source data-src="/videos/swipe-to-delete.mp4" type="video/mp4" />
+                      <p>
+                        Your browser doesn't support HTML video. Here is a
+                        <a href="/videos/swipe-to-delete.mp4" download="budget-warden-v1.5.1-swipe-to-delete.mp4">link to the video</a> instead.
+                      </p>
+                    </video>
+                  </div>
+                  <div title="Android Swipe to Delete Demo" hidden>
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
+                      <source data-src="/videos/android-swipe-to-delete.mp4" type="video/mp4" />
+                      <p>
+                        Your browser doesn't support HTML video. Here is a
+                        <a href="/videos/android-swipe-to-delete.mp4" download="budget-warden-v1.5.1-android-swipe-to-delete.mp4">link to the video</a> instead.
+                      </p>
+                    </video>
+                  </div>
+                </div>
+                <Stack align="center">
+                  <Tabs
+                    client:only
+                    tabs={[
+                      { label: "iOS", id: "iOS Swipe to Delete Demo" },
+                      { label: "Android", id: "Android Swipe to Delete Demo" },
+                    ]}
+                  />
+                </Stack>
+              </Stack>
+            </Col>
+            <Col span={6} largeGutter={true} break="md"> 
+              <Stack gap="md">
+                <Heading level="h3" size={28}>Swipe to Delete Budgets, Categories and Transactions</Heading>
+                <Stack gap="sm">
+                  <Paragraph fontSize={24}>We added support for the familiar swipe to delete gesture to budgets, categories and transactions to make removal of items easier.</Paragraph>
+                  <Paragraph fontSize={24}>Deletion will still ask for confirmation to avoid accidental removals.</Paragraph>
+                </Stack>
+              </Stack>
+            </Col>
+          </Row>
+          <Row largeGutter={true}>
+            <Col span={6} largeGutter={true} break="md">
+              <Stack gap="sm">
+                <div {...stylex.attrs(styles.demoWrapper)}>
+                  <div title="iOS Transactions View in Categories Demo">
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
+                      <source data-src="/videos/transactions-view-in-categories.mp4" type="video/mp4" />
+                      <p>
+                        Your browser doesn't support HTML video. Here is a
+                        <a href="/videos/transactions-view-in-categories.mp4" download="budget-warden-v1.5.1-transactions-view-in-categories.mp4">link to the video</a> instead.
+                      </p>
+                    </video>
+                  </div>
+                  <div title="Android Transactions View in Categories Demo" hidden>
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
+                      <source data-src="/videos/android-transactions-view-in-categories.mp4" type="video/mp4"/>
+                      <p>
+                        Your browser doesn't support HTML video. Here is a
+                        <a href="/videos/android-transactions-view-in-categories.mp4" download="budget-warden-v1.5.1-android-transactions-view-in-categories.mp4">link to the video</a> instead.
+                      </p>
+                    </video>
+                  </div>
+                </div>
+                <Stack align="center">
+                  <Tabs
+                    client:only
+                    tabs={[
+                      { label: "iOS", id: "iOS Transactions View in Categories Demo" },
+                      { label: "Android", id: "Android Transactions View in Categories Demo" },
+                    ]}
+                  />
+                </Stack>
+              </Stack>
+
+            </Col>
+            <Col span={6} largeGutter={true} break="md"> 
+              <Stack gap="md">
+                <Heading level="h3" size={28}>View Transactions in Each Category</Heading>
+                <Stack gap="sm">
+                  <Paragraph fontSize={24}>You can now view the current budget's transactions for a specific category underneath it's details.</Paragraph>
+                  <Paragraph fontSize={24}>You can also utilize the excellent full text search in the transactions view for more specific searches.</Paragraph>
+                </Stack>
+              </Stack>
+            </Col>
+          </Row>
+          <Row largeGutter={true}>
+            <Col span={6} largeGutter={true} break="md">
+              <Stack gap="sm" align="center">
+                <Image {...stylex.attrs(styles.imageDemo) } src={webRedesignThumb} width="480" height="526" loading="lazy" alt="abstract shapes illustration depicting the web application redesign (adjusted border radiuses and button versions for better hierarchy" />
+              </Stack>
+
+            </Col>
+            <Col span={6} largeGutter={true} break="md"> 
+              <Stack gap="md">
+                <Heading level="h3" size={28}>Web App Redesign</Heading>
+                <Stack gap="sm">
+                  <Paragraph fontSize={24}>Our web app just got a fresh new look:</Paragraph>
+                  <ul>
+                    <li>Redesigned login view for a cleaner more welcoming first impression.</li>
+                    <li>Softer, modern edges with increased border radius across the interface.</li>
+                    <li>New button styles to improve hierarchy and make key actions stand out.</li>
+                  </ul>
+                  <Paragraph fontSize={24}>Experience a smoother, more intuitive interface that's as pleasant to use as it is to look at.</Paragraph>
+                </Stack>
+              </Stack>
+            </Col>
+          </Row>
+        </Stack>
+      </Stack>
 		</Container>
 	</Section>
 </HeaderFooterLayout>
