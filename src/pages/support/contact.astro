@@ -1,0 +1,50 @@
+---
+import HeaderFooterLayout from '../../layouts/header-footer-layout.astro';
+import { Container, Row, Col } from '../../components/grid';
+import Heading from '../../components/heading';
+import Paragraph from '../../components/paragraph';
+import Section from '../../components/section';
+import Stack from '../../components/stack';
+import Anchor from '../../components/anchor';
+import ContactForm from '../../components/contact-form';
+---
+
+<HeaderFooterLayout
+	title="Contact Support - Budget Warden"
+	description="Submit a support ticket to the Budget Warden team. We're here to help with any issues, questions, or feedback you may have."
+>
+	<Section>
+		<Container>
+			<Row largeGutter={true}>
+				<Col span={8} break="lg" largeGutter={true}>
+					<Stack gap="lg">
+						<Stack gap="md">
+							<Anchor href="/support" textDecoration="none">&larr; Back to Support</Anchor>
+							<Heading level="h1" size={40}>Open a Support Ticket</Heading>
+							<Paragraph fontSize={24}>
+								Having an issue or have a question? Fill out the form below and our support team will get back to you as soon as possible.
+							</Paragraph>
+						</Stack>
+
+						<ContactForm client:load />
+					</Stack>
+				</Col>
+				<Col span={4} break="lg" largeGutter={true}>
+					<Stack gap="md">
+						<Heading level="h2" size={30}>Before You Submit</Heading>
+						<Paragraph fontSize={22}>
+							Check our <Anchor href="/support/guides">User Guides</Anchor> for common questions and step-by-step tutorials.
+						</Paragraph>
+						<Paragraph fontSize={22}>
+							You can also browse our <Anchor href="/support#faq">FAQ section</Anchor> for quick answers to common questions.
+						</Paragraph>
+						<Heading level="h3" size={26}>Response Times</Heading>
+						<Paragraph fontSize={22}>
+							We typically respond within 24-48 hours during business days. For urgent issues, please indicate this in your subject line.
+						</Paragraph>
+					</Stack>
+				</Col>
+			</Row>
+		</Container>
+	</Section>
+</HeaderFooterLayout>

@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+
+// Get first guide to redirect to
+const guides = await getCollection('guides');
+const sortedGuides = guides.sort((a, b) => a.data.order - b.data.order);
+const firstGuide = sortedGuides[0];
+
+// Redirect to the first guide article
+return Astro.redirect(`/support/guides/${firstGuide.id}`);
+---
