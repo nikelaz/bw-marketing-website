@@ -17,7 +17,7 @@ const styles = stylex.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
-    padding: '1.25rem 0',
+    padding: '1rem 0',
     background: 'none',
     border: 'none',
     cursor: 'pointer',
@@ -38,16 +38,11 @@ const styles = stylex.create({
     transform: 'rotate(180deg)',
   },
   answer: {
-    overflow: 'hidden',
-    transition: 'max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease',
-    maxHeight: 0,
-    opacity: 0,
-    paddingBottom: 0,
+    display: 'none',
+    paddingBottom: '1rem',
   },
   answerOpen: {
-    maxHeight: '500px',
-    opacity: 1,
-    paddingBottom: '1.25rem',
+    display: 'block',
   },
   answerText: {
     margin: 0,
@@ -98,8 +93,8 @@ const FAQAccordionItem = (props: FAQAccordionItemProps) => {
         <span {...stylex.props(styles.question)}>{question}</span>
         <svg
           {...stylex.props(styles.chevron, isOpen ? styles.chevronOpen : null)}
-          width="20"
-          height="20"
+          width="25"
+          height="25"
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
