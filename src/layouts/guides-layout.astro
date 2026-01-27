@@ -4,11 +4,14 @@ import FooterLayout from './footer-layout.astro';
 import { Container, Row, Col } from '../components/grid';
 import Header from '../components/header';
 import Section from '../components/section';
+import Stack from '../components/stack';
+import Breadcrumb from '../components/breadcrumb';
 import GuidesSidebar from '../components/guides-sidebar';
 
 export interface Props {
 	title?: string;
 	description?: string;
+	currentGuideTitle: string;
 	categories: Array<{
 		name: string;
 		articles: Array<{
@@ -21,7 +24,7 @@ export interface Props {
 	currentSlug?: string;
 }
 
-const { title, description, categories, currentSlug } = Astro.props;
+const { title, description, categories, currentSlug, currentGuideTitle } = Astro.props;
 const currentPath = new URL(Astro.request.url).pathname;
 
 export const styles = stylex.create({
@@ -46,7 +49,13 @@ export const styles = stylex.create({
 	</Container>
 	<Section>
 		<Container>
-			<Row largeGutter={true}>
+			<Stack gap="lg">
+				<Breadcrumb items={[
+					{ label: 'Support', href: '/support' },
+					{ label: 'User Guides', href: '/support/guides' },
+					{ label: currentGuideTitle }
+				]} />
+				<Row largeGutter={true}>
 				<Col span={3} break="lg" largeGutter={true}>
 					<GuidesSidebar 
 						categories={categories} 
@@ -57,7 +66,8 @@ export const styles = stylex.create({
 				<Col span={9} break="lg" largeGutter={true}>
 					<slot />
 				</Col>
-			</Row>
+				</Row>
+			</Stack>
 		</Container>
 	</Section>
 </FooterLayout>

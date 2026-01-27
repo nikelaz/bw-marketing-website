@@ -62,6 +62,7 @@ categoriesMap.forEach((articles, cat) => {
 	description={guide.data.summary || `Learn about ${guide.data.title} in the Budget Warden user guide.`}
 	categories={categories}
 	currentSlug={guide.id}
+	currentGuideTitle={guide.data.title}
 >
 	<article>
 		<Stack gap="lg">

@@ -6,6 +6,7 @@ import Paragraph from '../../components/paragraph';
 import Section from '../../components/section';
 import Stack from '../../components/stack';
 import Anchor from '../../components/anchor';
+import Breadcrumb from '../../components/breadcrumb';
 import ContactForm from '../../components/contact-form';
 ---
 
@@ -19,7 +20,10 @@ import ContactForm from '../../components/contact-form';
 				<Col span={8} break="lg" largeGutter={true}>
 					<Stack gap="lg">
 						<Stack gap="md">
-							<Anchor href="/support" textDecoration="none">&larr; Back to Support</Anchor>
+							<Breadcrumb items={[
+								{ label: 'Support', href: '/support' },
+								{ label: 'Contact Support' }
+							]} />
 							<Heading level="h1" size={40}>Open a Support Ticket</Heading>
 							<Paragraph fontSize={24}>
 								Having an issue or have a question? Fill out the form below and our support team will get back to you as soon as possible.
