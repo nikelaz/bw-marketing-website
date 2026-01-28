@@ -56,13 +56,14 @@ interface LinkCardProps {
   description: string;
   href: string;
   iconType: IconType;
+  target?: string;
 }
 
 const LinkCard = (props: LinkCardProps) => {
-  const { title, description, href, iconType } = props;
+  const { title, description, href, iconType, target } = props;
 
   return (
-    <a href={href} {...stylex.props(styles.card)} data-astro-prefetch>
+    <a href={href} target={target} {...stylex.props(styles.card)} data-astro-prefetch>
       <div {...stylex.props(styles.iconWrapper)}>
         {icons[iconType]}
       </div>

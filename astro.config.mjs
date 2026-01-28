@@ -4,7 +4,6 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import stylex from 'astro-stylex';
 import sitemap from '@astrojs/sitemap';
-import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +15,5 @@ export default defineConfig({
   experimental: {
     svg: true,
   },
-  output: 'server',
-  adapter: netlify(),
+  output: 'static',
 });
