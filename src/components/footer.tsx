@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { colors, fontSizes, fontWeights } from '../styles/theme.stylex';
 
 const styles = stylex.create({
@@ -47,7 +47,7 @@ const Footer = () => (
     <FooterNav>
       <FooterNavLink href="https://stats.uptimerobot.com/uhjAiQS2xR" target="_blank">Systems Status</FooterNavLink>
       <FooterNavLink href="/blog">Blog</FooterNavLink>
-      {/* <FooterNavLink href="#">Support</FooterNavLink> */}
+      <FooterNavLink href="/support">Support</FooterNavLink>
       <FooterNavLink href="/legal">Legal</FooterNavLink>
     </FooterNav>
   </footer>

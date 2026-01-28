@@ -12,7 +12,5 @@ export default defineConfig({
     filter: (page) => page !== 'https://www.budgetwarden.com/admin/',
   })],
   prefetch: true,
-  experimental: {
-    svg: true,
-  },
+  output: 'static',
 });

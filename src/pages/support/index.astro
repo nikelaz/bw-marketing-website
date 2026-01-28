@@ -1,0 +1,82 @@
+---
+import HeaderFooterLayout from '../../layouts/header-footer-layout.astro';
+import { Container, Row, Col } from '../../components/grid';
+import Heading from '../../components/heading';
+import Paragraph from '../../components/paragraph';
+import Section from '../../components/section';
+import Stack from '../../components/stack';
+import LinkCard from '../../components/link-card';
+import FAQ from '../../components/faq';
+
+const faqItems = [
+	{
+		question: "Can I share my budget with family members?",
+		answer: "We don't have dedicated budget sharing capabilities yet, but we're actively working on it and it will be available soon. Currently, the only way to share your budget with family members is to share your account credentials with them."
+	},
+	{
+		question: "What happens when I delete my account?",
+		answer: "When you delete your account, we immediately remove all data related to your account from our database. This includes all your budgets, transactions, categories, and personal information. This action is permanent and cannot be undone."
+	},
+	{
+		question: "Is my financial data secure?",
+		answer: "Yes. We use HTTPS for all data transfers to ensure your information is encrypted in transit. Passwords are encrypted when stored (though if you sign in with Google or Apple, we don't store any passwords). Your budgeting data is secured in our database with access restricted to your user account only."
+	}
+];
+---
+
+<HeaderFooterLayout
+	title="Support - Budget Warden"
+	description="Get help with Budget Warden. Open a support ticket, browse our user guides, or find answers in our FAQ section."
+>
+	<Section>
+		<Container>
+			<Stack gap="xl">
+        <Row>
+          <Col span={10} break="sm">
+            <Stack gap="md">
+              <Heading level="h1" size={40}>Support</Heading>
+              <Paragraph fontSize={26}>
+                Need help? We're here to assist you. Open a support ticket, browse our comprehensive user guides, or check our FAQ for quick answers.
+              </Paragraph>
+            </Stack>
+          </Col>
+        </Row>
+
+				<Row largeGutter={true}>
+					<Col span={6} break="md" largeGutter={true}>
+						<LinkCard
+							title="Get in Touch"
+							description="Need a hand with something or want to help us improve? Submit your request and we’ll get back to you shortly."
+							href="https://airtable.com/appw1pg4SAeTJ1QAH/pagIaOAtKsQVxTfdW/form"
+              target="_blank"
+							iconType="ticket"
+							client:load
+						/>
+					</Col>
+					<Col span={6} break="md" largeGutter={true}>
+						<LinkCard
+							title="User Guides"
+							description="Browse our documentation for step-by-step tutorials, feature explanations, and best practices."
+							href="/support/guides"
+							iconType="book"
+							client:load
+						/>
+					</Col>
+				</Row>
+			</Stack>
+		</Container>
+	</Section>
+
+	<Section>
+    <Container>
+      <Row>
+        <Col span={10} break="sm">
+          <Stack gap="lg">
+            <Heading level="h2" size={32}>Frequently Asked Questions</Heading>
+            <FAQ items={faqItems} client:load />
+          </Stack>
+        </Col>
+      </Row>
+		</Container>
+	</Section>
+</HeaderFooterLayout>

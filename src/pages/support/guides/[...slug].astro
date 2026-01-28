@@ -1,0 +1,78 @@
+---
+import { getCollection, render } from 'astro:content';
+import GuidesLayout from '../../../layouts/guides-layout.astro';
+import Heading from '../../../components/heading';
+import Stack from '../../../components/stack';
+import './_guide-article.css';
+
+export async function getStaticPaths() {
+	const guides = await getCollection('guides');
+	return guides.map(guide => ({
+		params: { slug: guide.id },
+		props: { guide },
+	}));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+
+// Get all guides for the sidebar
+const allGuides = await getCollection('guides');
+
+// Group guides by category
+const categoryOrder = ['Getting Started', 'Features', 'Troubleshooting', 'Account & Billing'];
+const categoriesMap = new Map<string, Array<{
+	id: string;
+	title: string;
+	category: string;
+	order: number;
+}>>();
+
+allGuides.forEach(g => {
+	const category = g.data.category;
+	if (!categoriesMap.has(category)) {
+		categoriesMap.set(category, []);
+	}
+	categoriesMap.get(category)!.push({
+		id: g.id,
+		title: g.data.title,
+		category: g.data.category,
+		order: g.data.order,
+	});
+});
+
+// Sort categories by the predefined order
+const categories = categoryOrder
+	.filter(cat => categoriesMap.has(cat))
+	.map(cat => ({
+		name: cat,
+		articles: categoriesMap.get(cat)!,
+	}));
+
+// Add any categories not in the predefined order
+categoriesMap.forEach((articles, cat) => {
+	if (!categoryOrder.includes(cat)) {
+		categories.push({ name: cat, articles });
+	}
+});
+---
+
+<GuidesLayout
+	title={`${guide.data.title} - User Guides - Budget Warden`}
+	description={guide.data.summary || `Learn about ${guide.data.title} in the Budget Warden user guide.`}
+	categories={categories}
+	currentSlug={guide.id}
+	currentGuideTitle={guide.data.title}
+>
+	<article>
+		<Stack gap="md">
+			<header>
+        <Heading level="h1" size={40}>{guide.data.title}</Heading>
+			</header>
+
+			<div class="guide_article">
+				<Content />
+			</div>
+		</Stack>
+	</article>
+</GuidesLayout>

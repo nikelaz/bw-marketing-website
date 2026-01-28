@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { colors } from '../styles/theme.stylex';
 import { Row, Col } from './grid';
 import Heading from './heading';

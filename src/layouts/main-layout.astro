@@ -1,5 +1,5 @@
 ---
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { colors } from '../styles/theme.stylex';
 import CookieConsent from '../components/cookie-consent.astro';
 
@@ -26,7 +26,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" {...stylex.attrs(styles.body)}>
+<html lang="en" {...stylex.props(styles.body)}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -37,8 +37,8 @@ const {
 		<link rel="sitemap" href="/sitemap-index.xml" />
     <script data-goatcounter="https://budgetwarden.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 	</head>
-	<body {...stylex.attrs(styles.body)}>
-		<main {...stylex.attrs(styles.content)}>
+	<body {...stylex.props(styles.body)}>
+		<main {...stylex.props(styles.content)}>
 			<slot />
 		</main>
 	</body>

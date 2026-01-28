@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { colors } from '../styles/theme.stylex.ts';
 
 const styles = stylex.create({

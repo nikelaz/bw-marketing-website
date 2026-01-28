@@ -1,0 +1,62 @@
+.guide_article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  line-height: 1.6;
+}
+
+.guide_article p,
+.guide_article h1,
+.guide_article h2,
+.guide_article h3,
+.guide_article h4,
+.guide_article h5,
+.guide_article h6,
+.guide_article ol,
+.guide_article ul {
+  margin: 0;
+}
+
+.guide_article h2 {
+  font-size: 1.333rem;
+}
+
+.guide_article h3 {
+  font-size: 1.250rem;
+}
+
+.guide_article h4 {
+  font-size: 1.166rem;
+}
+
+.guide_article h5 {
+  font-size: 1.083rem;
+}
+
+.guide_article h6 {
+  font-size: 1rem;
+}
+
+.guide_article li {
+  margin-bottom: 0.2rem;
+}
+
+.guide_article img {
+  aspect-ratio: 16 / 9;
+  display: block;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #F4F1FC;
+  margin: 2rem 0;
+}
+
+.guide_article a {
+  color: #03318b;
+  transition: .2s color;
+}
+
+.guide_article a:hover,
+.guide_article a:focus {
+  color: #032363;
+}
