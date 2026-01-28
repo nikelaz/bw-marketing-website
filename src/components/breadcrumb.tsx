@@ -1,5 +1,7 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { colors } from '../styles/theme.stylex';
+
+const sm: SmMaxMediaQuery = '@media (max-width: 640px)';
 
 interface BreadcrumbItem {
   label: string;
@@ -12,7 +14,10 @@ interface BreadcrumbProps {
 
 const styles = stylex.create({
   nav: {
-    display: 'flex',
+    display: {
+      default: 'flex',
+      [sm]: 'none',
+    },
     alignItems: 'center',
     gap: '0.5rem',
     fontSize: '0.875rem',
@@ -29,7 +34,7 @@ const styles = stylex.create({
     color: colors.ash600,
   },
   current: {
-    color: colors.ash600,
+    color: colors.black,
   },
 });
 

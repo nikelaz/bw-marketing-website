@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { fontSizes, fontWeights, colors } from '../styles/theme.stylex';
 import type React from 'react';
 

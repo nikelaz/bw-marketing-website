@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { useState, useEffect } from 'react';
 import { colors } from '../styles/theme.stylex';
 

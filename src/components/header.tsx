@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { useState } from 'react';
 import Logo from './logo';
 import { fontSizes, fontWeights, colors } from '../styles/theme.stylex';
@@ -35,7 +35,6 @@ const Header = (props: HeaderProps) => {
           <HeaderNavLink href="/whats-new" currentPath={props.currentPath}>What's New</HeaderNavLink>
           <HeaderNavLink href="/blog/" currentPath={props.currentPath}>Blog</HeaderNavLink>
           <HeaderNavLink href="/support/" currentPath={props.currentPath}>Support</HeaderNavLink>
-          <HeaderNavLink href="/legal/" currentPath={props.currentPath}>Legal</HeaderNavLink>
           <HeaderNavLink href="https://app.budgetwarden.com/login" currentPath={props.currentPath}>Sign In</HeaderNavLink>
           <Button size="sm" fontSize={20} href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
         </HeaderNavDrawer>

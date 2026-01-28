@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import HeaderFooterLayout from '../layouts/header-footer-layout.astro';
 import { Container, Row, Col } from '../components/grid';
 import Heading from '../components/heading';
@@ -44,7 +44,7 @@ const posts = (await getCollection('blog')).sort(
 							<Card>
 								<CardHeader>
 									<Aspect>
-										<img {...stylex.attrs(styles.thumbnail)} src={post.data.thumbnail} alt="" loading={index > 3 ? 'lazy' : 'eager'} role="presentation" />
+										<img {...stylex.props(styles.thumbnail)} src={post.data.thumbnail} alt="" loading={index > 3 ? 'lazy' : 'eager'} role="presentation" />
 									</Aspect>
 								</CardHeader>
 								<Stack gap="md">

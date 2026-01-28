@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import HeaderFooterLayout from '../layouts/header-footer-layout.astro';
 import { Container, Row, Col } from '../components/grid';
 import Heading from '../components/heading';
@@ -77,9 +77,9 @@ const posts = await getCollection('blog');
           <Row largeGutter={true}>
             <Col span={6} largeGutter={true} break="md">
               <Stack gap="sm">
-                <div {...stylex.attrs(styles.demoWrapper)}>
+                <div {...stylex.props(styles.demoWrapper)}>
                   <div title="iOS Apple and Google Authentication Demo">
-                    <video controls autoplay muted loop playsinline {...stylex.attrs(styles.iOSVideo)} poster="/videos/apple-google-auth.jpg">
+                    <video controls autoplay muted loop playsinline {...stylex.props(styles.iOSVideo)} poster="/videos/apple-google-auth.jpg">
                       <source src="/videos/apple-google-auth.mp4" type="video/mp4" />
                       <p>
                         Your browser doesn't support HTML video. Here is a
@@ -88,7 +88,7 @@ const posts = await getCollection('blog');
                     </video>
                   </div>
                   <div title="Android Google Authentication Demo" hidden>
-                    <video data-lazy controls autoplay loop muted playsinline {...stylex.attrs(styles.androidVideo)}>
+                    <video data-lazy controls autoplay loop muted playsinline {...stylex.props(styles.androidVideo)}>
                       <source data-src="/videos/android-google-auth.mp4" type="video/mp4" />
                       <p>
                         Your browser doesn't support HTML video. Here is a
@@ -97,7 +97,7 @@ const posts = await getCollection('blog');
                     </video>
                   </div>
                   <div title="Web Google Authentication Demo" hidden>
-                    <video data-lazy controls autoplay loop muted playsinline {...stylex.attrs(styles.webVideo)}>
+                    <video data-lazy controls autoplay loop muted playsinline {...stylex.props(styles.webVideo)}>
                       <source data-src="/videos/web-google-auth.mp4" type="video/mp4" />
                       <p>
                         Your browser doesn't support HTML video. Here is a
@@ -132,9 +132,9 @@ const posts = await getCollection('blog');
           <Row largeGutter={true}>
             <Col span={6} largeGutter={true} break="md"> 
               <Stack gap="sm">
-                <div {...stylex.attrs(styles.demoWrapper)}>
+                <div {...stylex.props(styles.demoWrapper)}>
                   <div title="iOS Swipe to Delete Demo">
-                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.props(styles.iOSVideo)}>
                       <source data-src="/videos/swipe-to-delete.mp4" type="video/mp4" />
                       <p>
                         Your browser doesn't support HTML video. Here is a
@@ -143,7 +143,7 @@ const posts = await getCollection('blog');
                     </video>
                   </div>
                   <div title="Android Swipe to Delete Demo" hidden>
-                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.props(styles.androidVideo)}>
                       <source data-src="/videos/android-swipe-to-delete.mp4" type="video/mp4" />
                       <p>
                         Your browser doesn't support HTML video. Here is a
@@ -176,9 +176,9 @@ const posts = await getCollection('blog');
           <Row largeGutter={true}>
             <Col span={6} largeGutter={true} break="md">
               <Stack gap="sm">
-                <div {...stylex.attrs(styles.demoWrapper)}>
+                <div {...stylex.props(styles.demoWrapper)}>
                   <div title="iOS Transactions View in Categories Demo">
-                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.iOSVideo)}>
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.props(styles.iOSVideo)}>
                       <source data-src="/videos/transactions-view-in-categories.mp4" type="video/mp4" />
                       <p>
                         Your browser doesn't support HTML video. Here is a
@@ -187,7 +187,7 @@ const posts = await getCollection('blog');
                     </video>
                   </div>
                   <div title="Android Transactions View in Categories Demo" hidden>
-                    <video controls autoplay loop muted playsinline data-lazy {...stylex.attrs(styles.androidVideo)}>
+                    <video controls autoplay loop muted playsinline data-lazy {...stylex.props(styles.androidVideo)}>
                       <source data-src="/videos/android-transactions-view-in-categories.mp4" type="video/mp4"/>
                       <p>
                         Your browser doesn't support HTML video. Here is a
@@ -221,7 +221,7 @@ const posts = await getCollection('blog');
           <Row largeGutter={true}>
             <Col span={6} largeGutter={true} break="md">
               <Stack gap="sm" align="center">
-                <Image {...stylex.attrs(styles.imageDemo) } src={webRedesignThumb} width="480" height="526" loading="lazy" alt="abstract shapes illustration depicting the web application redesign (adjusted border radiuses and button versions for better hierarchy" />
+                <Image {...stylex.props(styles.imageDemo) } src={webRedesignThumb} width="480" height="526" loading="lazy" alt="abstract shapes illustration depicting the web application redesign (adjusted border radiuses and button versions for better hierarchy" />
               </Stack>
 
             </Col>

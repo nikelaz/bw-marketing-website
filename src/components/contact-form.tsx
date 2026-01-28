@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { useState } from 'react';
 import { colors, fontSizes, fontWeights } from '../styles/theme.stylex';
 import Input from './input';

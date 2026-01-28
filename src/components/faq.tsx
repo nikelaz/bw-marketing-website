@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 import { useState } from 'react';
 import { colors, fontSizes, fontWeights } from '../styles/theme.stylex';
 
@@ -6,7 +6,6 @@ const styles = stylex.create({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem',
   },
   item: {
     borderBottom: '1px solid',

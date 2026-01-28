@@ -10,28 +10,16 @@ import FAQ from '../../components/faq';
 
 const faqItems = [
 	{
-		question: "How do I reset my password?",
-		answer: "You can reset your password by clicking the 'Forgot Password' link on the login page. Enter your email address and we'll send you a link to create a new password."
-	},
-	{
-		question: "How do I export my budget data?",
-		answer: "To export your data, go to Settings > Data Management > Export. You can choose to export in CSV or JSON format. Your export will include all transactions, budgets, and categories."
-	},
-	{
 		question: "Can I share my budget with family members?",
-		answer: "Yes! Budget Warden supports shared budgets. Navigate to your budget settings and select 'Share Budget'. You can invite family members via email and set their permission levels."
+		answer: "We don't have dedicated budget sharing capabilities yet, but we're actively working on it and it will be available soon. Currently, the only way to share your budget with family members is to share your account credentials with them."
 	},
 	{
-		question: "What happens to my data if I cancel my subscription?",
-		answer: "Your data is retained for 30 days after cancellation. During this period, you can reactivate your account and restore access to all your data. After 30 days, data is permanently deleted."
+		question: "What happens when I delete my account?",
+		answer: "When you delete your account, we immediately remove all data related to your account from our database. This includes all your budgets, transactions, categories, and personal information. This action is permanent and cannot be undone."
 	},
 	{
 		question: "Is my financial data secure?",
-		answer: "Absolutely. We use bank-level 256-bit encryption for all data transmission and storage. We never store your bank credentials, and all connections are secured via SSL/TLS."
-	},
-	{
-		question: "How do I connect my bank account?",
-		answer: "Go to Accounts > Add Account and select your bank from the list. You'll be redirected to your bank's secure login page. Budget Warden uses read-only access and cannot make transactions on your behalf."
+		answer: "Yes. We use HTTPS for all data transfers to ensure your information is encrypted in transit. Passwords are encrypted when stored (though if you sign in with Google or Apple, we don't store any passwords). Your budgeting data is secured in our database with access restricted to your user account only."
 	}
 ];
 ---
@@ -44,7 +32,7 @@ const faqItems = [
 		<Container>
 			<Stack gap="xl">
         <Row>
-          <Col span={10}>
+          <Col span={10} break="sm">
             <Stack gap="md">
               <Heading level="h1" size={40}>Support</Heading>
               <Paragraph fontSize={26}>
@@ -82,7 +70,7 @@ const faqItems = [
 	<Section>
     <Container>
       <Row>
-        <Col span={10}>
+        <Col span={10} break="sm">
           <Stack gap="lg">
             <Heading level="h2" size={32}>Frequently Asked Questions</Heading>
             <FAQ items={faqItems} client:load />

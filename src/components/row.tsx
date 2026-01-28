@@ -1,4 +1,4 @@
-import stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex';
 
 const gutter = 1.25;
 const largeGutter = 3.333;

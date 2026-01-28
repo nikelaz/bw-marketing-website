@@ -65,12 +65,9 @@ categoriesMap.forEach((articles, cat) => {
 	currentGuideTitle={guide.data.title}
 >
 	<article>
-		<Stack gap="lg">
+		<Stack gap="md">
 			<header>
-				<Stack gap="sm">
-					<span class="guide-category">{guide.data.category}</span>
-					<Heading level="h1" size={40}>{guide.data.title}</Heading>
-				</Stack>
+        <Heading level="h1" size={40}>{guide.data.title}</Heading>
 			</header>
 
 			<div class="guide_article">
@@ -79,14 +76,3 @@ categoriesMap.forEach((articles, cat) => {
 		</Stack>
 	</article>
 </GuidesLayout>
-
-<style>
-	.guide-category {
-		display: inline-block;
-		font-size: 0.875rem;
-		font-weight: 600;
-		color: var(--color-prim, #2563eb);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-</style>
