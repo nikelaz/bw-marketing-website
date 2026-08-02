@@ -1,0 +1,61 @@
+---
+import HeaderFooterLayout from '../../../layouts/header-footer-layout.astro';
+import { Container, Row, Col } from '../../../components/grid';
+import Heading from '../../../components/heading';
+import Section from '../../../components/section';
+import Stack from '../../../components/stack';
+import Anchor from '../../../components/anchor';
+import Paragraph from '../../../components/paragraph';
+---
+
+<HeaderFooterLayout
+	title="Application Privacy Policy - Budget Warden"
+	description="Privacy policy for the Budget Warden application on all supported platforms"
+>
+	<Section>
+		<Container>
+      <article>
+        <Stack gap="md">
+          <header>
+            <Stack gap="md">
+              <Heading level="h1" size={40}>Privacy Policy</Heading>
+              <Heading level="h2" size={32}>Budget Warden Application</Heading>
+            </Stack>
+          </header>
+
+          <Paragraph>This Privacy Policy applies to the Budget Warden application (referred to as the "Application") on all supported platforms, including Android, iOS, macOS, and any other platform on which the Application is made available. The Application is provided by Nikola Nikolov Lazarov (referred to as the "Service Provider") for use "AS IS".</Paragraph>
+
+          <Heading level="h3" size={30}>Information Collection and Use</Heading>
+
+          <Paragraph>The Application does not require or create a user account. It does not ask you to provide your name, email address, or other personal information in order to create or manage a budget.</Paragraph>
+          <Paragraph>Your budgets and related financial information are stored as files on your device or in a storage location that you choose. The Application does not upload these files to the Service Provider, and the Service Provider cannot access their contents.</Paragraph>
+          <Paragraph>The Application does not collect your precise location.</Paragraph>
+
+          <Heading level="h3" size={30}>Your Files and Storage</Heading>
+          <Paragraph>You control where your budget files are created, opened, copied, exported, backed up, and deleted. The Application accesses a budget file only as needed to perform actions that you request.</Paragraph>
+          <Paragraph>If you choose a folder managed by a third-party storage or synchronization service, such as iCloud Drive, Google Drive, OneDrive, or a similar service, that provider may process or synchronize the file under its own privacy policy. Device backups may also include your files, depending on your operating-system and backup settings. These services are not operated or controlled by the Service Provider.</Paragraph>
+
+          <Heading level="h3" size={30}>Third Party Access</Heading>
+          <Paragraph>The Application does not send your budget files or their contents to the Service Provider or share them with third parties. Platform providers, application stores, storage providers, and operating systems may independently process information when you download or use the Application. Their handling of that information is governed by their own privacy policies.</Paragraph>
+
+          <Heading level="h3" size={30}>Data Retention Policy</Heading>
+          <Paragraph>Because the Application does not create accounts or upload your budget files to the Service Provider, the Service Provider does not retain your budgets or related financial information. Your files remain in the storage locations you choose until you move or delete them. Uninstalling the Application may not delete files stored outside the Application, synchronized by another provider, or included in a device backup.</Paragraph>
+          <Paragraph>If you contact the Service Provider directly, the Service Provider may retain your message and contact details as reasonably necessary to respond to you, keep support records, comply with legal obligations, and protect legitimate interests.</Paragraph>
+
+          <Heading level="h3" size={30}>Children</Heading>
+          <Paragraph>The Application is not designed to collect personal information from children, and the Service Provider does not knowingly collect personal information from children through the Application. If you believe a child has sent personal information directly to the Service Provider, please contact <Anchor href="mailto:nikola.n.lazarov@outlook.com">nikola.n.lazarov@outlook.com</Anchor> so that appropriate action can be taken.</Paragraph>
+
+          <Heading level="h3" size={30}>Security</Heading>
+          <Paragraph>Your budget files are protected by the security of your device and any storage location you choose. You are responsible for securing your device, controlling access to your files, and maintaining backups where appropriate. No method of electronic storage is completely secure, so the Service Provider cannot guarantee the security of files stored on your device or by a third-party provider.</Paragraph>
+
+          <Heading level="h3" size={30}>Changes</Heading>
+          <Paragraph>This Privacy Policy may be updated from time to time, including when the Application's features or supported platforms change. Any changes will be published on this page with a revised effective date. You are encouraged to review this page periodically.</Paragraph>
+          <Paragraph>This Privacy Policy is effective as of 2026-08-02.</Paragraph>
+
+          <Heading level="h3" size={30}>Contact Us</Heading>
+					<Paragraph>If you have questions about this Privacy Policy or the Application's privacy practices, contact the Service Provider at <Anchor href="mailto:nikola.n.lazarov@outlook.com">nikola.n.lazarov@outlook.com</Anchor>.</Paragraph>
+			  </Stack>
+      </article>
+		</Container>
+	</Section>
+</HeaderFooterLayout>
