@@ -5,7 +5,7 @@ order: 2
 summary: "Learn how to create your first budget in Budget Warden."
 ---
 
-When you create your account, your first budget will automatically be created for you for the current month.
+When you create a new budget file, your first monthly budget will automatically be created for the current month.
 
 ## What is a Budget?
 
@@ -35,7 +35,7 @@ You don't manually update the actual amount. It automatically updates when you a
 
 ## Transactions
 
-A transaction is how you record any movement of money into or out of your budget. You are encouraged to record every single movement of your money in order to track efficiently - using the mobile app for this is great, just record your transactions immediately after you make them, to avoid forgetting about them.
+A transaction is how you record any movement of money into or out of your budget. You are encouraged to record every single movement of your money in order to track efficiently—using Budget Warden on your phone is great for this. Record transactions immediately after you make them to avoid forgetting about them.
 
 For example, when you receive your salary, add a transaction for the received income in the "Salary" category.
 

@@ -32,11 +32,9 @@ const Header = (props: HeaderProps) => {
             </svg>
           </button>
           <HeaderNavLink href="/" currentPath={props.currentPath}>Overview</HeaderNavLink>
-          <HeaderNavLink href="/whats-new" currentPath={props.currentPath}>What's New</HeaderNavLink>
           <HeaderNavLink href="/blog/" currentPath={props.currentPath}>Blog</HeaderNavLink>
           <HeaderNavLink href="/support/" currentPath={props.currentPath}>Support</HeaderNavLink>
-          <HeaderNavLink href="https://app.budgetwarden.com/login" currentPath={props.currentPath}>Sign In</HeaderNavLink>
-          <Button size="sm" fontSize={20} href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
+          <Button size="sm" fontSize={20} href="/download">Download</Button>
         </HeaderNavDrawer>
         <button
           type="button"

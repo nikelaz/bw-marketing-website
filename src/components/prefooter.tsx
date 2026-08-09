@@ -38,10 +38,10 @@ const Prefooter = () => (
         <Col span={6} break="md">
           <Stack gap="md">
             <Stack gap="sm">
-              <Heading level="h2" size={40}>Get Started for Free!</Heading>
-              <Paragaph fontSize={26}>Take control of your personal finances.</Paragaph>
+              <Heading level="h2" size={40}>Budget on Your Device</Heading>
+              <Paragaph fontSize={26}>Download one of our native apps for your operating system.</Paragaph>
             </Stack>
-            <Button href="https://app.budgetwarden.com/sign-up" fontSize={20}>Sign Up</Button>
+            <Button href="/download" fontSize={20}>Download</Button>
           </Stack>
         </Col>
         <img src={imgPrefooterIllustration.src} loading="lazy" alt="a male and female character shown as saving large coins in a cartoon piggy bank to demonstrate a couple saving money together" {...stylex.props(styles.illustration)} />

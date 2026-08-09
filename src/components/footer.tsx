@@ -45,7 +45,7 @@ const Footer = () => (
   <footer {...stylex.props(styles.footer)}>
     <p {...stylex.props(styles.copy)}>© Budget Warden {currentYear}</p>
     <FooterNav>
-      <FooterNavLink href="https://stats.uptimerobot.com/uhjAiQS2xR" target="_blank">Systems Status</FooterNavLink>
+      <FooterNavLink href="/download">Download</FooterNavLink>
       <FooterNavLink href="/blog">Blog</FooterNavLink>
       <FooterNavLink href="/support">Support</FooterNavLink>
       <FooterNavLink href="/legal">Legal</FooterNavLink>

@@ -2,11 +2,11 @@
 import FooterLayout from './footer-layout.astro';
 import { Container } from '../components/grid';
 import Header from '../components/header';
-const { title, description } = Astro.props;
+const { title, description, hidePrefooter = false } = Astro.props;
 const currentPath = new URL(Astro.request.url).pathname;
 ---
 
-<FooterLayout title={title} description={description}>
+<FooterLayout title={title} description={description} hidePrefooter={hidePrefooter}>
 	<Container>
 		<Header client:idle currentPath={currentPath} />
 	</Container>

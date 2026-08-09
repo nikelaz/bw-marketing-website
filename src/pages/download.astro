@@ -1,0 +1,215 @@
+---
+import * as stylex from '@stylexjs/stylex';
+import HeaderFooterLayout from '../layouts/header-footer-layout.astro';
+import { Container, Row, Col } from '../components/grid';
+import Heading from '../components/heading';
+import Paragraph from '../components/paragraph';
+import Section from '../components/section';
+import Stack from '../components/stack';
+import AppStoreBtn from '../assets/app-store-btn.svg';
+import GooglePlayBtn from '../assets/google-play-btn.svg';
+import { colors, fontSizes, fontWeights } from '../styles/theme.stylex';
+
+const appleStoreUrl = 'https://apps.apple.com/my/app/budget-warden/id6741514133';
+const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.lazarovco.budgetwarden.android';
+
+export const md: MdMaxMediaQuery = '@media (max-width: 768px)';
+
+export const styles = stylex.create({
+  intro: {
+    maxWidth: '48rem',
+  },
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    gap: '2rem',
+    padding: {
+      default: '1.666rem',
+      [md]: '1.25rem',
+    },
+    borderRadius: '0.833rem',
+    backgroundColor: colors.ash100,
+    border: '1px solid',
+    borderColor: colors.ash300,
+  },
+  cardHeader: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    gap: '1rem',
+  },
+  icon: {
+    width: '3rem',
+    height: '3rem',
+    flexShrink: 0,
+    color: colors.ash900,
+  },
+  status: {
+    display: 'inline-block',
+    padding: '0.35rem 0.65rem',
+    borderRadius: '999px',
+    color: colors.prim,
+    backgroundColor: colors.ash200,
+    fontSize: fontSizes['20'],
+    fontWeight: fontWeights.semibold,
+    lineHeight: 1,
+  },
+  statusSoon: {
+    color: colors.ash900,
+    backgroundColor: colors.ash300,
+  },
+  storeLink: {
+    display: 'block',
+    width: 'fit-content',
+    borderRadius: '0.35rem',
+    outlineOffset: '3px',
+  },
+  storeBadge: {
+    display: 'block',
+    maxWidth: '100%',
+    height: '60px',
+  },
+  comingSoon: {
+    display: 'inline-flex',
+    width: 'fit-content',
+    minHeight: '60px',
+    alignItems: 'center',
+    padding: '0.8rem 1.25rem',
+    borderRadius: '0.416rem',
+    color: colors.ash900,
+    backgroundColor: colors.ash300,
+    fontSize: fontSizes['20'],
+    fontWeight: fontWeights.semibold,
+  },
+  privacyNote: {
+    padding: {
+      default: '1.666rem',
+      [md]: '1.25rem',
+    },
+    borderRadius: '0.833rem',
+    backgroundColor: colors.ash300,
+  },
+});
+---
+
+<HeaderFooterLayout
+  hidePrefooter={true}
+  title="Download Budget Warden for iOS, macOS and Android"
+  description="Download Budget Warden for iPhone, iPad, macOS, or Android. The Windows app is coming soon. No account required—your budget files stay under your control."
+>
+  <Section>
+    <Container>
+      <Stack gap="xl">
+        <div {...stylex.props(styles.intro)}>
+          <Stack gap="md">
+            <Heading level="h1" size={40}>Budget on Your Device</Heading>
+            <Paragraph fontSize={28}>
+              Budget Warden is available as a native app for iPhone, iPad, macOS, and Android. <br />Windows is coming soon. Choose your platform to get started.
+            </Paragraph>
+          </Stack>
+        </div>
+
+        <Row largeGutter={true}>
+          <Col span={6} break="md" largeGutter={true}>
+            <article {...stylex.props(styles.card)}>
+              <Stack gap="md">
+                <div {...stylex.props(styles.cardHeader)}>
+                  <svg {...stylex.props(styles.icon)} viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <rect x="20" y="4" width="28" height="56" rx="6" stroke="currentColor" stroke-width="3" />
+                    <path d="M29 10h10M31 53h6" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                  </svg>
+                  <span {...stylex.props(styles.status)}>Available now</span>
+                </div>
+                <Stack gap="sm">
+                  <Heading level="h2" size={32}>iPhone &amp; iPad</Heading>
+                  <Paragraph fontSize={24}>Plan your budget and record transactions wherever you are with the iOS and iPadOS app.</Paragraph>
+                </Stack>
+              </Stack>
+              <a href={appleStoreUrl} target="_blank" rel="noopener noreferrer" aria-label="Download Budget Warden for iPhone and iPad on the App Store" {...stylex.props(styles.storeLink)}>
+                <AppStoreBtn {...stylex.props(styles.storeBadge)} aria-hidden="true" />
+              </a>
+            </article>
+          </Col>
+
+          <Col span={6} break="md" largeGutter={true}>
+            <article {...stylex.props(styles.card)}>
+              <Stack gap="md">
+                <div {...stylex.props(styles.cardHeader)}>
+                  <svg {...stylex.props(styles.icon)} viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <rect x="5" y="8" width="54" height="38" rx="4" stroke="currentColor" stroke-width="3" />
+                    <path d="M24 56h16M28 46v10M36 46v10" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                  </svg>
+                  <span {...stylex.props(styles.status)}>Available now</span>
+                </div>
+                <Stack gap="sm">
+                  <Heading level="h2" size={32}>macOS</Heading>
+                  <Paragraph fontSize={24}>Manage your budget from your Mac with the same focused, file-based experience.</Paragraph>
+                </Stack>
+              </Stack>
+              <a href={appleStoreUrl} target="_blank" rel="noopener noreferrer" aria-label="Download Budget Warden for macOS on the App Store" {...stylex.props(styles.storeLink)}>
+                <AppStoreBtn {...stylex.props(styles.storeBadge)} aria-hidden="true" />
+              </a>
+            </article>
+          </Col>
+
+          <Col span={6} break="md" largeGutter={true}>
+            <article {...stylex.props(styles.card)}>
+              <Stack gap="md">
+                <div {...stylex.props(styles.cardHeader)}>
+                  <svg {...stylex.props(styles.icon)} viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <path d="M18 22h28v24a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8V22Z" stroke="currentColor" stroke-width="3" />
+                    <path d="M20 22c1-8 5-12 12-12s11 4 12 12M24 6l-3-4M40 6l3-4" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                    <circle cx="26" cy="17" r="1.5" fill="currentColor" />
+                    <circle cx="38" cy="17" r="1.5" fill="currentColor" />
+                  </svg>
+                  <span {...stylex.props(styles.status)}>Available now</span>
+                </div>
+                <Stack gap="sm">
+                  <Heading level="h2" size={32}>Android</Heading>
+                  <Paragraph fontSize={24}>Keep your budget close at hand with the dedicated Android app.</Paragraph>
+                </Stack>
+              </Stack>
+              <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" aria-label="Get Budget Warden for Android on Google Play" {...stylex.props(styles.storeLink)}>
+                <GooglePlayBtn {...stylex.props(styles.storeBadge)} aria-hidden="true" />
+              </a>
+            </article>
+          </Col>
+
+          <Col span={6} break="md" largeGutter={true}>
+            <article {...stylex.props(styles.card)}>
+              <Stack gap="md">
+                <div {...stylex.props(styles.cardHeader)}>
+                  <svg {...stylex.props(styles.icon)} viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+                    <path d="M5 10.5 29 7v23H5V10.5Zm28-4L59 3v27H33V6.5ZM5 34h24v23L5 53.5V34Zm28 0h26v27l-26-3.5V34Z" />
+                  </svg>
+                  <span {...stylex.props(styles.status, styles.statusSoon)}>Coming soon</span>
+                </div>
+                <Stack gap="sm">
+                  <Heading level="h2" size={32}>Windows</Heading>
+                  <Paragraph fontSize={24}>The Windows app is in development and will be available in a future release.</Paragraph>
+                </Stack>
+              </Stack>
+              <span {...stylex.props(styles.comingSoon)}>Not yet available</span>
+            </article>
+          </Col>
+        </Row>
+      </Stack>
+    </Container>
+  </Section>
+</HeaderFooterLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Budget Warden",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "iOS, iPadOS, macOS, Android",
+  "downloadUrl": [appleStoreUrl, googlePlayUrl],
+  "offers": {
+    "@type": "Offer",
+    "price": 0,
+    "priceCurrency": "USD"
+  }
+})} />

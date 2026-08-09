@@ -15,6 +15,7 @@ import getFormattedDate from '../helpers/get-formatted-date';
 import Tabs from '../components/tabs';
 import Figure from '../components/figure';
 import { Image } from 'astro:assets';
+import { colors } from '../styles/theme.stylex';
 
 import CalendarIcon from '../assets/icons/calendar.svg';
 import UserIcon from '../assets/icons/user.svg';
@@ -52,6 +53,11 @@ export const styles = stylex.create({
   imageDemo: {
     maxWidth: '100%',
   },
+  currentExperienceNotice: {
+    padding: '1.25rem',
+    borderRadius: '0.833rem',
+    backgroundColor: colors.ash300,
+  },
 });
 
 const posts = await getCollection('blog');
@@ -69,6 +75,11 @@ const posts = await getCollection('blog');
 		<Container>
       <Stack gap="lg">
         <Heading level="h1" size={40}>What's New</Heading>
+        <aside {...stylex.props(styles.currentExperienceNotice)}>
+          <Paragraph fontSize={24}>
+            Budget Warden has moved to dedicated, file-based apps that do not require an account. The account-based web app described in this older release is no longer available. <Anchor href="/download">Download the current app for your device</Anchor>.
+          </Paragraph>
+        </aside>
         <Stack gap="xl">
           <Stack gap="sm">
             <Heading level="h2" size={30}>Version 1.5.1</Heading>

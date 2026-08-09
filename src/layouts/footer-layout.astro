@@ -3,13 +3,13 @@ import MainLayout from './main-layout.astro';
 import { Container } from '../components/grid';
 import Footer from '../components/footer';
 import Prefooter from '../components/prefooter';
-const { title, description } = Astro.props;
+const { title, description, hidePrefooter = false } = Astro.props;
 ---
 
 <MainLayout title={title} description={description}>
 	<slot />
 	<Container>
-		<Prefooter />
+		{!hidePrefooter && <Prefooter />}
 		<Footer />
 	</Container>
 </MainLayout>

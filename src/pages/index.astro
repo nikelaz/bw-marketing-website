@@ -10,12 +10,9 @@ import Paragraph from '../components/paragraph';
 import Button from '../components/button';
 import Section from '../components/section';
 import { Card, CardHeader } from '../components/card';
-import Aspect from '../components/aspect';
 import OrganizeYourFinancesIllustration from '../assets/organize-your-finances.svg';
 import VisualizeYourProgressIllustration from '../assets/visualize-your-progress.svg';
 import CreateMonthlyBudgetsIllustration from '../assets/create-monthly-budgets.svg';
-import GooglePlayBtn from '../assets/google-play-btn.svg';
-import AppStoreBtn from '../assets/app-store-btn.svg';
 import HeroIllustration from '../assets/hero-illustration.svg';
 import HeroBackground from '../assets/hero-background.svg';
 import PiggyBankIllustration from '../assets/piggy-bank.svg';
@@ -65,20 +62,11 @@ export const styles = stylex.create({
 		maxWidth: '100%',
 		maxHeight: '100%',
 	},
-	storeBtn: {
-		display: 'block',
-  },
   ctaRow: {
     display: 'flex',
     gap: '1.25rem',
     flexWrap: 'wrap',
     padding: '0 0.625rem'
-  },
-  signUpBtn: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '60px',
   }
 });
 ---
@@ -95,22 +83,16 @@ export const styles = stylex.create({
 							<Stack gap="md">
 								<Stack gap="sm">
 									<Heading level="h1" size={40}>Take Control of Your Personal Finances</Heading>
-									<Heading level="h2" size={32} fontWeight='regular'>Your Personal Finance Copilot</Heading>
+									<Heading level="h2" size={32} fontWeight='regular'>Private Budgeting, Right on Your Device</Heading>
 								</Stack>
 								<Row>
 									<Col span={11}>
-										<Paragraph>Are you tired of fragile spreadsheets and complicated apps? Budget Warden is an intuitive and powerful tool designed to help you manage your personal finances hassle-free.</Paragraph>
+                    <Paragraph>Are you tired of fragile spreadsheets and complicated apps? <br />Budget Warden makes personal budgeting simple.</Paragraph>
 									</Col>
 								</Row>
 								<Row>
                 <div {...stylex.props(styles.ctaRow)}>
-                    <Button x={styles.signUpBtn} href="https://app.budgetwarden.com/sign-up">Sign Up</Button>
-                  <a href="https://apps.apple.com/us/app/budget-warden/id6741514133" target="_blank" rel="noopener">
-                    <AppStoreBtn {...stylex.props(styles.storeBtn)} aria-label="download on the app store" />
-                  </a>
-                  <a href="https://play.google.com/store/apps/details?id=com.lazarovco.budgetwarden&pcampaignid=web_share" target="_blank" rel="noopener">
-                    <GooglePlayBtn {...stylex.props(styles.storeBtn)} aria-label="get it on google play" />
-                  </a>
+                  <Button href="/download">Download</Button>
 								</div>
 							</Stack>
 						</div>
@@ -223,11 +205,11 @@ export const styles = stylex.create({
 	"name": "Budget Warden",
 	"applicationCategory": "Finance",
 	"applicationSubCategory": "Personal Finance, Budgeting",
-	"operatingSystem": "iOS, Android, Web",
+	"operatingSystem": "iOS, iPadOS, macOS, Android",
 	"offers": {
 		"@type": "Offer",
 		"price": 0,
-		"currency": "USD",
+		"priceCurrency": "USD",
 	}
 })} />
 
@@ -237,6 +219,6 @@ export const styles = stylex.create({
 	"url": "https://www.budgetwarden.com",
 	"logo": "https://www.budgetwarden.com/uploads/logo.svg",
 	"name": "Budget Warden",
-	"description": "Budget Warden is a personal finance and budget tracking application for iOS, Android and Web.",
+	"description": "Budget Warden is a private, file-based personal finance and budget tracking application for iOS, iPadOS, macOS and Android.",
 	"email": "contact@budgetwarden.com",
 })} />
