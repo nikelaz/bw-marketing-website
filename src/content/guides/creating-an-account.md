@@ -14,7 +14,7 @@ Visit the [download page](/download) to get Budget Warden for your platform:
 - **iPhone and iPad** — available from the App Store
 - **macOS** — available from the App Store
 - **Android** — available from Google Play
-- **Windows** — coming soon
+- **Windows** — available from the Microsoft Store
 
 The web app is no longer available.
 

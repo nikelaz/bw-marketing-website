@@ -12,6 +12,7 @@ import { colors, fontSizes, fontWeights } from '../styles/theme.stylex';
 
 const appleStoreUrl = 'https://apps.apple.com/my/app/budget-warden/id6741514133';
 const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.lazarovco.budgetwarden.android';
+const microsoftStoreUrl = 'https://apps.microsoft.com/detail/9MVBSM6KKSNR?hl=en-us&gl=BG&ocid=pdpshare';
 
 export const md: MdMaxMediaQuery = '@media (max-width: 768px)';
 
@@ -56,10 +57,6 @@ export const styles = stylex.create({
     fontWeight: fontWeights.semibold,
     lineHeight: 1,
   },
-  statusSoon: {
-    color: colors.ash900,
-    backgroundColor: colors.ash300,
-  },
   storeLink: {
     display: 'block',
     width: 'fit-content',
@@ -71,7 +68,7 @@ export const styles = stylex.create({
     maxWidth: '100%',
     height: '60px',
   },
-  comingSoon: {
+  microsoftStoreButton: {
     display: 'inline-flex',
     width: 'fit-content',
     minHeight: '60px',
@@ -96,8 +93,8 @@ export const styles = stylex.create({
 
 <HeaderFooterLayout
   hidePrefooter={true}
-  title="Download Budget Warden for iOS, macOS and Android"
-  description="Download Budget Warden for iPhone, iPad, macOS, or Android. The Windows app is coming soon. No account required—your budget files stay under your control."
+  title="Download Budget Warden for iOS, macOS, Android and Windows"
+  description="Download Budget Warden for iPhone, iPad, macOS, Android, or Windows. No account required—your budget files stay under your control."
 >
   <Section>
     <Container>
@@ -106,7 +103,7 @@ export const styles = stylex.create({
           <Stack gap="md">
             <Heading level="h1" size={40}>Budget on Your Device</Heading>
             <Paragraph fontSize={28}>
-              Budget Warden is available as a native app for iPhone, iPad, macOS, and Android. <br />Windows is coming soon. Choose your platform to get started.
+              Budget Warden is available as a native app for iPhone, iPad, macOS, Android, and Windows. Choose your platform to get started.
             </Paragraph>
           </Stack>
         </div>
@@ -184,14 +181,16 @@ export const styles = stylex.create({
                   <svg {...stylex.props(styles.icon)} viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
                     <path d="M5 10.5 29 7v23H5V10.5Zm28-4L59 3v27H33V6.5ZM5 34h24v23L5 53.5V34Zm28 0h26v27l-26-3.5V34Z" />
                   </svg>
-                  <span {...stylex.props(styles.status, styles.statusSoon)}>Coming soon</span>
+                  <span {...stylex.props(styles.status)}>Available now</span>
                 </div>
                 <Stack gap="sm">
                   <Heading level="h2" size={32}>Windows</Heading>
-                  <Paragraph fontSize={24}>The Windows app is in development and will be available in a future release.</Paragraph>
+                  <Paragraph fontSize={24}>Manage your budget on your Windows device with the dedicated native app.</Paragraph>
                 </Stack>
               </Stack>
-              <span {...stylex.props(styles.comingSoon)}>Not yet available</span>
+              <a href={microsoftStoreUrl} target="_blank" rel="noopener noreferrer" aria-label="Get Budget Warden for Windows from the Microsoft Store" {...stylex.props(styles.storeLink, styles.microsoftStoreButton)}>
+                Get it from Microsoft Store
+              </a>
             </article>
           </Col>
         </Row>
@@ -205,8 +204,8 @@ export const styles = stylex.create({
   "@type": "SoftwareApplication",
   "name": "Budget Warden",
   "applicationCategory": "FinanceApplication",
-  "operatingSystem": "iOS, iPadOS, macOS, Android",
-  "downloadUrl": [appleStoreUrl, googlePlayUrl],
+  "operatingSystem": "iOS, iPadOS, macOS, Android, Windows",
+  "downloadUrl": [appleStoreUrl, googlePlayUrl, microsoftStoreUrl],
   "offers": {
     "@type": "Offer",
     "price": 0,
