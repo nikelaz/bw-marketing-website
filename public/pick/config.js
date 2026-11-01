@@ -8,5 +8,5 @@ window.BUDGET_WARDEN_PICKER = {
   // API key restricted to the Google Picker API and to this page's origin.
   apiKey: "AIzaSyDCBR1iu7nuyyIAeXmjDgSfgI-T4z_39YQ",
   // The Cloud project number (Project settings → Project number).
-  appId: "budget-warden-513405",
+  appId: "448533380151",
 };
